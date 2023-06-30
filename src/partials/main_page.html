@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="./css/main_page.css">
+</head>
+<body>
+    <header class="headerDiv">
+        <include src="./partials/header.html" class="header"></include>
+        <h1>Header</h1>
+    </header>
+    <div class="mainPage">
+        <div class="filter_supportUkraine">
+            <h1 class="filter">Тут фільтр</h1>
+            <h1 class="SupportUkraine">Тут Support Ukraine</h1>
+        </div>
+        <div class="best-sellers_all-categories">
+            <include src="./partials/main-page/best-sellers.html" class="best-sellers"></include>
+            <include src="./partials/main-page/all-categories.html" class="all-categories"></include>
+        </div>
+    </div>
+</body>
+</html>
