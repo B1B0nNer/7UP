@@ -1,0 +1,40 @@
+@mixin tel {
+    @media screen and (min-width: 320px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1440px) {
+        @content;
+    }
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 320px) {
+        min-width: 280px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (min-width: 768px) {
+        min-width: 704px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @media (min-width: 1200px) {
+        min-width: 966px;
+        padding-left: 40px;
+        padding-right: 24px;
+    }
+}
