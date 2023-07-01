@@ -70,7 +70,7 @@ const books = [{
 },
 ];
 
-import { onClickDelateBtn } from "./js/onClickDelateBtn";
+import { onClickDelateBtn } from "./onClickDelateBtn";
 
 localStorage.setItem('selected-books', JSON.stringify(books));
 
