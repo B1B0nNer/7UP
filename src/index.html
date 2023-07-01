@@ -14,6 +14,18 @@
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/main_page.html"></include>
+    <header style="text-align: center;">
+      <include src="./partials/header.html"></include>
+    </header>
+    <main style="display: flex; flex-direction: row; margin: 0 100px; gap: 60%;">
+      <nav>
+        <include src="./partials/category.html"></include>
+        <!-- <include src="./partials/supportUkraine"></include> коментар, бо ще немає цього файлу !-->
+      </nav>
+      <div>
+        <include src="./partials/best-sellers.html"></include>
+        <include src="./partials/all-categories.html"></include>
+      </div>
+    </main>
   </body>
 </html>
