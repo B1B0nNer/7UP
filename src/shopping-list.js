@@ -74,8 +74,14 @@ import { onClickDelateBtn } from "./js/onClickDelateBtn";
 
 localStorage.setItem('selected-books', JSON.stringify(books));
 
+
 const delateBtnRefs = document.querySelectorAll('.delate-btn');
 console.log(delateBtnRefs);
+
 delateBtnRefs.forEach(delateBtnRef => {
     delateBtnRef.addEventListener('click', onClickDelateBtn)
+})
+
+document.addEventListener('click', (event) => {
+    console.log(event.target)
 })
