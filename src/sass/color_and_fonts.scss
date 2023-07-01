@@ -15,6 +15,7 @@
     --black-400: #F6F6F6; 
     --white-200: #F3F3F3;;
     --white-100: #FFFFFF;
+    --blue-900:rgba(79, 46, 232, 0.4);
     --blue: #4F2EE8;
     --yellow: #EAC645;
     --switcher-light: url(../images/switcher_light.png);
@@ -44,16 +45,25 @@ body {
 
 .category_text {                /*  стилі для списку категорій (All categories,Combined Print and E-book Fiction...)*/
     color: var(--black-700);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: var(--regular);
     line-height: 1.3;
-    letter-spacing: -0.36px;
+            letter-spacing: -0.32px;
+    @include tablet {
+        font-size: 18px;
+        letter-spacing: -0.36px;
+    }
 }
 
 .title {                       /*  стилі для заголовків на сторінці таких як Hardcover Fiction, Best Sellers Books... */
-    font-size: 48px;
-    line-height: 1;
-    letter-spacing: -1.92px;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -1.28px;
+    @include tablet{
+        font-size: 48px;
+        line-height: 1.08;
+        letter-spacing: -1.92px;
+    }
 }
 
 .text_card_title {                  /* назва книжок (I will find you,HELLO BEAUTIFUL,IT STARTS WITH US...)*/
