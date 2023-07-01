@@ -1,0 +1,131 @@
+.section-shopping-list {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+// .title-shoplist {
+    
+// }
+
+.empty-list {
+    margin-top: 120px;
+    // display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 265px;
+    text-align: center;
+}
+
+.message {
+    // color: var(--black-750);
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 14px;
+}
+
+.shopping-list {
+    margin-top: 40px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 20px;
+}
+
+.shopplist-item {
+    position: relative;
+display: flex;
+    max-width: 335px;
+    height: 170px;
+    padding: 14px;
+    align-items: flex-start;
+    gap: 14px;
+    border-radius: 16px;
+        border: 2px solid rgba(79, 46, 232, 0.40);
+}
+
+.shopplist-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.delate-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background-color: rgba(79, 46, 232, 1);
+    border: 1px solid var(--border-modal-btn);
+    border-radius: 28px;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.delate-btn:hover,
+.delate-btn:focus {
+    background-color: red;
+}
+
+.delate-svg {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.delate-btn:hover .delate-svg,
+.delate-btn:focus .delate-svg {
+    // fill: rgba(79, 46, 232, 1);
+    fill: green;
+}
+
+.card-shopplist {
+    max-width: 193px;
+}
+
+.text_card_title-shopplist {
+    margin-bottom: 4px;
+}
+
+.category-shopplist {
+    color: var(--black-500);
+    font-size: 12px;
+    font-weight: var(--regular);
+    line-height: 1.17;
+    letter-spacing: 0.36px;
+    margin-bottom: 8px;
+    max-width: 165px;
+    max-height: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.description-shopplist {
+    margin-bottom: 14px;
+    font-weight: var(--regular);
+    letter-spacing: -0.56px;
+    max-width: 193px;
+    max-height: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
+    /* let the text wrap preserving spaces */
+}
+
+.wrapper-card-shopplist-footer {
+    width: 193px;
+    display: flex;
+    gap: 16px;
+}
+
+.shopplist-text_card_author {
+width: 97px;
+}
+
+.wrapper-shops {
+    display: flex;
+    gap: 8px;
+}
