@@ -32,17 +32,6 @@
     --switcher-dark: url(../images/switcher_dark.png);
 }
 
-body {     
-    background-color:var(--white-100);                          /*  основні стилі для сторінки */
-    color: var(--black-900);
-    font-size: 14px;
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: var(--bold);
-    line-height: 1.2;
-    letter-spacing: -0.56px;
-}
-
 .category_text {                /*  стилі для списку категорій (All categories,Combined Print and E-book Fiction...)*/
     color: var(--black-700);
     font-size: 16px;
