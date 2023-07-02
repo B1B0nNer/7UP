@@ -16,7 +16,7 @@
     --blue-900:rgba(79, 46, 232, 0.4);
     --blue: #4F2EE8;
     --yellow: #EAC645;
-    --switcher-light: url(../images/switcher_light.png);
+    --switcher-light: url(/src/images/switcher_light.png);
 }
                 /* DARK */
                 
@@ -27,7 +27,7 @@
     --bgShopList: var(--black-900);
     --shopListAdd: var(--black-800);
     --authorization_dark:var(--white-100);
-    --switcher-dark: url(../images/switcher_dark.png);
+    --switcher-dark: url(/src/images/switcher_dark.png);
 }
 body {     
     background-color:var(--white-100);                          /*  основні стилі для сторінки */
