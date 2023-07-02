@@ -15,14 +15,16 @@
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <include src="./partials/header.html"></include>
-    <main style="display: flex; flex-direction: row; margin: 0 100px; gap: 30%">
+    <main>
       <div>
-        <include src="./partials/all-categories.html"></include>
+        <div class="home-top">
+          <include src="./partials/all-categories.html"></include>
+          <include src="./partials/support-ukraine.html"></include>
+        </div>
         <include src="./partials/best-sellers.html"></include>
-        <include src="./partials/support-ukraine.html"></include>
       </div>
       <include src="./partials//modal-book.html"></include>
     </main>
-    <include src="./partials/modalForm.html"></include>
+    <!-- <include src="./partials/modalForm.html"></include> -->
   </body>
 </html>
