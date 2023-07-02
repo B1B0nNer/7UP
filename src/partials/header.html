@@ -1,29 +1,50 @@
-<header class="header">
-  <include src="./partials/loader.html"></include>
-  <div class="header__logo logo">
-    <svg class="scrollup__icon" width="32" height="32">
-      <use href="images/sprite.svg#icon-logo"></use>
-    </svg>
-      <p class="logo__title">Bookshelf</p>
-  </div>
-  <nav class="header__menu menu">
-      <button class="menu__button" type="button" aria-expanded="false" aria-controls="menu__list">
+<header>
+  <div class="container">
+    <include src="./partials/loader.html"></include>
+    <div class="header">
+      <a class="header__logo logo" href="">
+        <svg class="scrollup__icon" width="32" height="32">
+          <use href="images/sprite.svg#icon-logo"></use>
+        </svg>
+        <p class="logo__title">Bookshelf</p>
+      </a>
+      <div class="box">
+        <ul class="menu__list" id="menu__list">
+          <li class="menu__item">
+            <a class="menu__link menu__link--current" href>Home</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href
+              >Shopping
+              <svg class="" width="20" height="20">
+                <use href="images/sprite.svg#icon-cart"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="box">
+          <div class="switch">
+            <input type="checkbox">
+          </div>
+          <div class="header__sign"></div>
+        </div>
+      </div>
+      <nav class="header__menu menu">
+        <button
+          class="menu__button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu__list"
+        >
           <svg class="menu__icon" aria-hidden="true" width="32" height="32">
-              <use class="menu__icon-menu" href="images/images/sprite.svg#menu"></use>
-              <use class="menu__icon-cross" href="images/images/sprite.svg#cross"></use>
+            <use class="menu__icon-menu" href="images/sprite.svg#menu"></use>
+            <use
+              class="menu__icon-cross"
+              href="images/sprite.svg#cross"
+            ></use>
           </svg>
-      </button>
-      <ul class="menu__list" id="menu__list">
-          <li class="menu__item">
-              <a class="menu__link menu__link--current" href>Home</a>
-          </li>
-          <li class="menu__item">
-              <a class="menu__link menu__link--inactive">Shopping
-                <svg class="scrollup__icon" width="20" height="20">
-                  <use href="images/sprite.svg#icon-cart"></use>
-                </svg>
-              </a>
-          </li>
-      </ul>
-  </nav>
+        </button>
+      </nav>
+    </div>
+  </div>
 </header>
