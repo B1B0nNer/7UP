@@ -1,4 +1,4 @@
-import found1 from '../images/01-found-1.png';
+import found1 from '../images/01-found-1.png'
 import found1x from '../images/01-found-2.png';
 import found2 from '../images/02-found-1.png';
 import found2x from '../images/02-found-2.png';
