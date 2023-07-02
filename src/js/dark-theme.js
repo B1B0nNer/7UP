@@ -1,5 +1,5 @@
 function theme() {
-    const toggleTheme = document.querySelector('toogle-theme')  
+    const toggleTheme = document.querySelector('.switch')  
     let el = document.documentElement
 
     toggleTheme.addEventListener('click', () => {
