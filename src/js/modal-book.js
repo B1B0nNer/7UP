@@ -37,7 +37,6 @@ async function getInfoAboutBook(bookId) {
     shops: dataRespons.buy_links,
     title:dataRespons.title,
   };
-  console.log(bookObj)
   return bookObj;
 }
 
