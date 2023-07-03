@@ -7,6 +7,7 @@ delateBtnRefs.forEach(delateBtnRef => {
 });
 
 function onClickDelateBtn(event) {
+    console.log('remove');
     const id = event.currentTarget.dataset.id;
     localStorage.removeItem(id);
     const itemIdRef = document.querySelector(`[data-idcard="${id}"]`);
