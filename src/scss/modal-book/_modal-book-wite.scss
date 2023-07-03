@@ -55,6 +55,10 @@
   border: none;
   stroke: var(--black-900);
 }
+.close-svg{
+     stroke: black;
+    filter: brightness(0) invert(1);
+}
 
 .name-book {
   margin-top: 14px;

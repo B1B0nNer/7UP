@@ -4,17 +4,17 @@ const URL = 'https://books-backend.p.goit.global/books/';
 let idBook = '';
 
 const objShop = {
-  Amazon: '<img src= "./images/amazon.png" alt="logo Amazon" width="62" height="19"></img>',
+  Amazon: '<img src= "/images/amazon.png" alt="logo Amazon" width="62" height="19">',
   'Apple Books':
-    '<img src="./images/apple.png" alt="logo Apple" width="62" height="19"></img>',
+    '<img src="/images/apple.png" alt="logo Apple" width="62" height="19">',
   'Barnes and Noble':
-    '<img src="./images/baren-nobel.png" alt="logo Barnes and Noble" width="33" height="33"></img>',
+    '<img src="/images/baren-nobel.png" alt="logo Barnes and Noble" width="33" height="33">',
   'Books-A-Million':
-    '<img src="./images/books-a-million.png" alt="logo Books A Million" width="62" height="28"></img>',
+    '<img src="/images/books-a-million.png" alt="logo Books A Million" width="62" height="28">',
   Bookshop:
-    '<img src="./images/book-shop.png" alt="logo Bookshop" width="33" height="33"></img>',
+    '<img src="/images/book-shop.png" alt="logo Bookshop" width="33" height="33">',
   IndieBound:
-    '<img src="./images/india-book.png" alt="logo Indie Bound" width="35" height="28"></img>',
+    '<img src="/images/india-book.png" alt="logo Indie Bound" width="35" height="28">',
 };
 
 async function getInfoAboutBook(bookId) {
@@ -34,7 +34,6 @@ async function getInfoAboutBook(bookId) {
 function getImeges(name) {
   if (name in objShop) {
     const image = objShop[name];
-    // console.log(image)
     return image;
   } else return '';
 }
@@ -46,10 +45,13 @@ async function addConten(bookId) {
       const pictur = getImeges(name);
       return `<li class="item item-book"><a href="${url}" target="_blank" class="link link-image">${pictur}</a></li>`;
     }).join('\n');
+  if (bookObj.img === '') {
+    bookObj.img = '../images/no-image-new.jpg'
+  };
   let modalHtml = ` <div class="container-modal js-modal">
       <button type='button' class="close-button">
       <svg class="close-svg" width="24" height="24">
-                    <use href="./images/icon.svg#icon-x-close"></use>
+                    // <use href="../images/icons.svg#icon-close"></use>
                   </svg>
                   </button>
                   <div class="info-book-conteiner">
@@ -151,6 +153,6 @@ function addLocal(key, value) {
   let addElementStorage = JSON.stringify(value);
   localStorage.setItem(key, addElementStorage);
 }
-function removElementStorage(key) {
-  localStorage.removeItem(key);
-}
+// function removElementStorage(key) {
+//   localStorage.removeItem(key);
+// }
