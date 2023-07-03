@@ -7,6 +7,7 @@
     --black-900: #111;
     --btn_SighUp:#111;           /*для темної теми*/
     --black-800:#202024;         /*для темної теми*/
+    --black-750: rgba(0, 0, 0, 0.60);
     --black-700: rgba(17, 17, 17, 0.60);
     --black-650: rgba(17, 17, 17, 0.50); /* кнопка SIGN IN*/
     --black-600: rgba(246, 246, 246, 0.50);  /*для темної теми*/
@@ -23,83 +24,13 @@
                 /* DARK */
                 
 :root[data-theme='dark']{
-    background-color: var(--black-800);
-    color: var(--white-100);
-    --signIn: var(--black-500);
-    --bgShopList: var(--black-900);
-    --shopListAdd: var(--black-800);
-    --authorization_dark:var(--white-100);
-    --switcher-dark: url(/src/images/switcher_dark.png);
-}
-body {     
-    background-color:var(--white-100);                          /*  основні стилі для сторінки */
-    color: var(--black-900);
-    font-size: 14px;
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: var(--bold);
-    line-height: 1.2;
-    letter-spacing: -0.56px;
+    --black-900: #FFFFFF;
+    --black-750: rgba(255, 255, 255, 0.60);
+    --black-650: rgba(246, 246, 246, 0.50);
+    --black-400: #202024;
+    --white-100:#111;
+    --shopListAdd:#202024;
+    --btn_SighUp: #F6F6F6;
+
 }
 
-.category_text {                /*  стилі для списку категорій (All categories,Combined Print and E-book Fiction...)*/
-    color: var(--black-700);
-    font-size: 18px;
-    font-size: 16px;
-    font-weight: var(--regular);
-    line-height: 1.3;
-    letter-spacing: -0.36px;
-            letter-spacing: -0.32px;
-    @include tablet {
-        font-size: 18px;
-        letter-spacing: -0.36px;
-    }
-}
-
-.title {                       /*  стилі для заголовків на сторінці таких як Hardcover Fiction, Best Sellers Books... */
-    font-size: 48px;
-    line-height: 1;
-    letter-spacing: -1.92px;
-    font-size: 32px;
-    line-height: 1.18;
-    letter-spacing: -1.28px;
-    @include tablet{
-        font-size: 48px;
-        line-height: 1.08;
-        letter-spacing: -1.92px;
-    }
-}
-
-.text_card_title {                  /* назва книжок (I will find you,HELLO BEAUTIFUL,IT STARTS WITH US...)*/
-    font-size: 16px;
-    letter-spacing: -0.64px;
-    text-transform: uppercase;
-}
-.text_card_author {                 /*автор книги Ann Napolitano, Harlan Coben...*/
-    color: var(--black-500);
-    font-size: 12px;
-    font-style: var(--italic);
-    font-weight: var(--regular);
-    line-height: 1.1;
-    letter-spacing: -0.48px;
-}
-.category_title {                /*категорії кножок (COMBINED PRINT & E-BOOK NONFICTION...)*/
-    color: var(--black-500);
-    font-weight: var(--regular);
-    line-height: 1.7;
-    letter-spacing: 0.42px;
-    text-transform: uppercase;
-}
-.header_authorization {            /* ім'я користувача який авторизується (Stephen)*/
-    color: var(--white-100);
-    font-size: 22px;
-    font-weight: var(--bold);
-    letter-spacing: -0.44px;
-}
-.modal_signIn{                          /* кнопка на вікні авторизації (sIGN In)*/
-    font-size: 18px;
-    font-weight: var(--bold);
-    line-height: 1.3;
-    letter-spacing: -0.18px;
-    text-transform: uppercase;
-}
