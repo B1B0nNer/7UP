@@ -1,4 +1,3 @@
-
 const btnSingUp = document.querySelector('[data-action="sign-up"]');
 const btnSingIn = document.querySelector('[data-action="sign-in"]');
 
