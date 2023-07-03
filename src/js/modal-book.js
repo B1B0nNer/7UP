@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-import icon_close from '../images/x-close.svg'
+import close from '../images/x-close.svg'
 import amazon from '../images/amazon.png';
 import apple from '../images/apple.png';
 import baren from '../images/baren-nobel.png';
@@ -58,7 +58,7 @@ async function addConten(bookId) {
   let modalHtml = ` <div class="container-modal js-modal">
       <button type='button' class="close-button">
       <svg class="close-svg" width="24" height="24">
-                     <use href="${icon_close}"></use>
+                     <use href="${close}"></use>
                   </svg>
                   </button>
                   <div class="info-book-conteiner">
