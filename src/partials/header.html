@@ -4,7 +4,7 @@
       <include src="./partials/loader.html"></include>
       <div class="header__content">
         <a class="header__logo" href="">
-          <svg class="logo__icon" width="32" height="32">
+          <svg class="logo__icon" width="24" height="24">
             <use href="images/sprite.svg#icon-logo"></use>
           </svg>
           <p class="logo__title">Bookshelf</p>
@@ -12,7 +12,7 @@
         <nav class="menu">
           <ul class="menu__list" id="menu__list">
             <li class="menu__item">
-              <a class="menu__link menu__link--current" href="">Home</a>
+              <a class="menu__link menu__link--current" href="#">Home</a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="./shopping-list.html">Shopping
@@ -26,8 +26,12 @@
         <div class="switch">
           <input type="checkbox" />
         </div>
-        <button class="login" type="button">
-          <p class="login__title">Sign up</p>
+        <button class="login-btn" type="button">
+          <p class="login-btn__title">Sign up
+            <svg class="" width="20" height="20">
+              <use href="images/sprite.svg#icon-arrow-narrow-right"></use>
+            </svg>
+          </p>
         </button>
           <button
           class="menu__btn"
@@ -35,7 +39,7 @@
           aria-expanded="false"
           aria-controls="menu__list">
           <svg class="menu__icon" aria-hidden="true" width="28" height="28">
-            <use class="menu__icon-menu" href="images/sprite.svg#icon-close"></use>
+            <use class="menu__icon-menu" href="images/sprite.svg#icon-menu"></use>
             <use class="menu__icon-cross" href="images/sprite.svg#icon-close"></use>
           </svg>
         </button>

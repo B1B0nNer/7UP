@@ -9,9 +9,17 @@
 
   &__content {
     display: flex;
-    padding: 12px 24px;
+    padding: 18px 20px;
     align-items: center;
     justify-content: space-between;
+
+    @media (width >= 768px) {
+      padding: 14px 32px;
+    }
+
+    @media (width >= 1440px) {
+      padding: 14px 24px;
+    }
   }
 }
 
@@ -21,9 +29,19 @@
   align-items: center;
   margin-right: 76px;
 
-  @media (width <= 736px) {
+  @media (width <= 768px) {
     z-index: 1;
   }
+}
+
+.logo__title {
+  color: #111;
+  font-size: 16px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.56px;
 }
 
 .menu__list {
@@ -31,15 +49,15 @@
   gap: 24px;
   align-items: center;
 
-  @media (width <= 736px) {
+  @media (width <= 768px) {
     display: none;
   }
 
   &.is-open {
-    @media (width <= 736px) {
+    @media (width <= 768px) {
       display: flex;
       position: fixed;
-      // top: 62px;
+      top: 66px;
       left: 50%;
       transform: translate(-50%, 0);
       padding: 0;
@@ -55,31 +73,42 @@
   gap: 4px;
   align-items: center;
   text-transform: uppercase;
+  color: #111;
+  font-size: 14px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
 
-  &:is(:hover, :focus) {
+  &:hover,
+  &:focus {
     color: #4f2ee8;
     fill: #4f2ee8;
   }
 
-  @media (width <= 736px) {
+  @media (width <= 768px) {
     color: #fff;
     fill: #fff;
 
-    &:is(:hover, :focus) {
+    &:hover,
+    &:focus {
       color: #111;
       fill: #111;
     }
   }
 
   &--current {
+    font-weight: 700;
     background: #eac645;
     border-radius: 36px;
     padding: 8px 16px 8px 16px;
 
-    @media (width <= 736px) {
+    @media (width <= 768px) {
       color: #111;
 
-      &:is(:hover, :focus) {
+      &:hover,
+      &:focus {
         color: #4f2ee8;
         fill: #4f2ee8;
       }
@@ -87,22 +116,32 @@
   }
 }
 
-.login {
-  display: flex;
-  justify-content: space-between;
+.login-btn {
+  display: block;
   align-items: center;
-  padding: 15px 14px;
+  padding: 10px 14px;
   width: 184px;
-  border-radius: 18px;
-  border: 1.5px solid #111;
+  border-radius: 36px;
   background: #4f2ee8;
+  border: 2px solid #4f2ee8;
   margin-left: 24px;
 
-  @media (width < 736px) {
+  &:hover,
+  &:focus,
+  &:hover .login-btn__title,
+  &:focus .login-btn__title {
+    background-color: #fff;
+    color: #111;
+  }
+
+  @media (width < 768px) {
     display: none;
   }
 
   &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #fff;
     font-size: 14px;
     font-family: DM Sans;
@@ -113,44 +152,12 @@
   }
 
   &.is-open {
-    @media (width <= 736px) {
+    @media (width <= 768px) {
       display: flex;
       position: absolute;
       top: 64px;
       left: 0;
       margin: 20px;
     }
-  }
-}
-
-.menu__btn {
-  display: flex;
-  background-color: transparent;
-  padding: 0;
-  margin-left: 14px;
-
-  @media (width > 736px) {
-    display: none;
-  }
-}
-
-@media (width <= 736px) {
-  .menu__icon {
-    display: block;
-    stroke: #111111;
-  }
-
-  .menu__icon:hover {
-    stroke: #4f2ee8;
-  }
-
-  .menu__icon-menu,
-  .is-open .menu__icon-cross {
-    display: block;
-  }
-
-  .menu__icon-cross,
-  .is-open .menu__icon-menu {
-    display: none;
   }
 }

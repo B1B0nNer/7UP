@@ -1,10 +1,10 @@
 .scrollup {
   position: fixed;
-  right: 1rem;
+  right: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3rem;
+  padding: 5px;
   background-color: #4f2ee8;
   border-radius: 0.4rem;
   z-index: 9999;
@@ -31,5 +31,5 @@
 
 .scrollup-show {
   visibility: visible;
-  bottom: 5rem;
+  bottom: 16px;
 }
