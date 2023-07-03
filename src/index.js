@@ -7,7 +7,6 @@ import './js/all-categories';
 import './js/category';
 import './js/seeMoreBtn';
 import './js/markup-shopping-list';
-import './js/shopping-list';
 import './js/support-ukraine';
 import './js/modal-book';
 import './js/reg-window';

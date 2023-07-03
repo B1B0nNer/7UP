@@ -13,6 +13,7 @@
   .menu__icon {
     display: block;
     stroke: #111111;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .menu__icon:hover {

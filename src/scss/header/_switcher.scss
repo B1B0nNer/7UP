@@ -1,15 +1,17 @@
 .switch {
+  display: flex;
   margin-left: auto;
   & input[type='checkbox'] {
     position: relative;
     width: 40px;
-    height: 24px;
+    height: 20px;
     outline: none;
     background-color: #4f2ee8;
     border-radius: 20px;
     transition: 0.5s;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    appearance: none;
     -webkit-appearance: none;
   }
 
@@ -22,6 +24,7 @@
     border-radius: 20px;
     transition: 0.5s;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    appearance: none;
     -webkit-appearance: none;
   }
 
