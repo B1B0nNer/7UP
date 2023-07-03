@@ -32,7 +32,7 @@ function markupShoppingList(arrSelectedBooks) {
   const arrCardsSelectedBooks = arrSelectedBooks.map(({ _id, bookName, author, img, description, title, shops }) => {
     const shopsName = shops.map(({ name, url }) =>  {
       const picture =  getImages(name);
-      return `<li class="item item-book"><a href="${url}" target="_blank" class="link link-image">${picture}
+      return `<li class="shop-item"><a href="${url}" target="_blank" class="shop-link-image">${picture}
       </a></li>`
     }).join('\n');
       
@@ -42,15 +42,16 @@ function markupShoppingList(arrSelectedBooks) {
             <use href="../images/icon.svg#icon-trash"></use>
           </svg>
         </button>
-        <img src="${img}" alt="" width="100" height="142" />
+        <img class="img-shoplist-card" src="${img}" alt="${title}" width="100" height="142" />
         <div class="card-shopplist">
-          <h2 class="text_card_title text_card_title-shopplist">${title}</h2>
-          <p class="category-shopplist">${bookName}</p>
-          <p class="description-shopplist">${description}</p>
-          <div class="wrapper-card-shopplist-footer">
-            <p class="text_card_author shopplist-text_card_author">${author}</p>
-            <ul class="wrapper-shops">${shopsName}</ul>
-          </div></div>
+          <h2 class="card-title-shoplist">${title}</h2>
+          <p class="card-category-shoplist">${bookName}</p>
+          <p class="card-description-shoplist">${description}</p>
+          <div class="wrapper-card-shoplist-footer">
+            <p class="card-author-shoplist">${author}</p>
+            <ul class="shops-list">${shopsName}</ul>
+          </div>
+        </div>
       </li>`
   });
   shoppingListRef.innerHTML = arrCardsSelectedBooks.join('');   
