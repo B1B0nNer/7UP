@@ -6,6 +6,7 @@ import baren from '../images/baren-nobel.png';
 import million from '../images/books-a-million.png';
 import bookshop from '../images/book-shop.png';
 import indieBound from '../images/india-book.png';
+import noImage from '../images/no-image-new.jpg';
 const bodyEl = document.querySelector('body');
 const URL = 'https://books-backend.p.goit.global/books/';
 let idBook = '';
@@ -34,7 +35,9 @@ async function getInfoAboutBook(bookId) {
     author: dataRespons.author,
     description: dataRespons.description,
     shops: dataRespons.buy_links,
+    title:dataRespons.title,
   };
+  console.log(bookObj)
   return bookObj;
 }
 
@@ -53,7 +56,7 @@ async function addConten(bookId) {
       return `<li class="item item-book"><a href="${url}" target="_blank" class="link link-image">${pictur}</a></li>`;
     }).join('\n');
   if (bookObj.img === ''||!bookObj.img) {
-    bookObj.img = '../images/no-image-new.jpg'
+    bookObj.img = `${noImage}`;
   };
   let modalHtml = ` <div class="container-modal js-modal">
       <button type='button' class="close-button">
