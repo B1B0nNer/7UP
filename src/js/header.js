@@ -1,11 +1,13 @@
-    const menuButton = document.querySelector('.menu__button');
-    const menuList = document.querySelector('.menu__list');
+const menuButton = document.querySelector('.menu__btn');
+const menuList = document.querySelector('.menu__list');
+const login = document.querySelector('.login');
 
-    menuButton.addEventListener('click', menuButtonClick);
+menuButton.addEventListener('click', menuButtonClick);
 
-    function menuButtonClick() {
-        let expanded = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', !expanded);
-        menuButton.classList.toggle('menu__button--open');
-        menuList.classList.toggle('menu__list--open');
-    }
+function menuButtonClick() {
+    let expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', !expanded);
+    menuButton.classList.toggle('is-open');
+    menuList.classList.toggle('is-open');
+    login.classList.toggle('is-open');
+}

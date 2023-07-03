@@ -9,4 +9,3 @@ function showLoader() {
 function hideLoader() {
   loader.classList.add('hidden');
 }
-
