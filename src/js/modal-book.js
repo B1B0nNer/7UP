@@ -1,20 +1,27 @@
 import * as basicLightbox from 'basiclightbox';
+import icon_close from '../images/x-close.svg'
+import amazon from '../images/amazon.png';
+import apple from '../images/apple.png';
+import baren from '../images/baren-nobel.png';
+import million from '../images/books-a-million.png';
+import bookshop from '../images/book-shop.png';
+import indieBound from '../images/india-book.png';
 const bodyEl = document.querySelector('body');
 const URL = 'https://books-backend.p.goit.global/books/';
 let idBook = '';
 
 const objShop = {
-  Amazon: '<img src= "/images/amazon.png" alt="logo Amazon" width="62" height="19">',
+  Amazon: `<img src= "${amazon}" alt="logo Amazon" width="62" height="19">`,
   'Apple Books':
-    '<img src="/images/apple.png" alt="logo Apple" width="62" height="19">',
+    `<img src="${apple}" alt="logo Apple" width="62" height="19">`,
   'Barnes and Noble':
-    '<img src="/images/baren-nobel.png" alt="logo Barnes and Noble" width="33" height="33">',
+    `<img src="${baren}" alt="logo Barnes and Noble" width="33" height="33">`,
   'Books-A-Million':
-    '<img src="/images/books-a-million.png" alt="logo Books A Million" width="62" height="28">',
+    `<img src="${million}" alt="logo Books A Million" width="62" height="28">`,
   Bookshop:
-    '<img src="/images/book-shop.png" alt="logo Bookshop" width="33" height="33">',
+    `<img src="${bookshop}" alt="logo Bookshop" width="33" height="33">`,
   IndieBound:
-    '<img src="/images/india-book.png" alt="logo Indie Bound" width="35" height="28">',
+    `<img src="${indieBound}" alt="logo Indie Bound" width="35" height="28">`,
 };
 
 async function getInfoAboutBook(bookId) {
@@ -45,13 +52,13 @@ async function addConten(bookId) {
       const pictur = getImeges(name);
       return `<li class="item item-book"><a href="${url}" target="_blank" class="link link-image">${pictur}</a></li>`;
     }).join('\n');
-  if (bookObj.img === '') {
+  if (bookObj.img === ''||!bookObj.img) {
     bookObj.img = '../images/no-image-new.jpg'
   };
   let modalHtml = ` <div class="container-modal js-modal">
       <button type='button' class="close-button">
       <svg class="close-svg" width="24" height="24">
-                    // <use href="../images/icons.svg#icon-close"></use>
+                     <use href="${icon_close}"></use>
                   </svg>
                   </button>
                   <div class="info-book-conteiner">
