@@ -1,0 +1,31 @@
+.menu__btn {
+  display: flex;
+  background-color: transparent;
+  padding: 0;
+  margin-left: 14px;
+
+  @media (width > 768px) {
+    display: none;
+  }
+}
+
+@media (width <= 768px) {
+  .menu__icon {
+    display: block;
+    stroke: #111111;
+  }
+
+  .menu__icon:hover {
+    stroke: #4f2ee8;
+  }
+
+  .menu__icon-menu,
+  .is-open .menu__icon-cross {
+    display: block;
+  }
+
+  .menu__icon-cross,
+  .is-open .menu__icon-menu {
+    display: none;
+  }
+}
