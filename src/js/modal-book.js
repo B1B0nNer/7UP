@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-import close from '../images/x-close.svg'
+import sprite from '../images/icons.svg'
 import amazon from '../images/amazon.png';
 import apple from '../images/apple.png';
 import baren from '../images/baren-nobel.png';
