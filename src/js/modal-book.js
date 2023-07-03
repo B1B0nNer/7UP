@@ -14,7 +14,7 @@ let idBook = '';
 const objShop = {
   Amazon: `<img src= "${amazon}" alt="logo Amazon" width="62" height="19">`,
   'Apple Books':
-    `<img src="${apple}" alt="logo Apple" width="62" height="19">`,
+    `<img src="${apple}" alt="logo Apple" width="44" height="44">`,
   'Barnes and Noble':
     `<img src="${baren}" alt="logo Barnes and Noble" width="33" height="33">`,
   'Books-A-Million':

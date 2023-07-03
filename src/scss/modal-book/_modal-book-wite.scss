@@ -12,6 +12,7 @@
 }
 
 .container-modal {
+  z-index: 9999999;
   padding: 40px 24px 24px 24px;
   max-width: 335px;
   height: 860px;
@@ -91,10 +92,12 @@
 
 .item-book {
   flex: 0 0 35%;
+  background-color: transparent;
+  filter: var(--filter);
 }
-
 .item-book img:is(:hover, :focus) {
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+ 
 }
 
 .link-image {
