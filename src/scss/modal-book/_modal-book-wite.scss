@@ -39,7 +39,6 @@
   margin-top: 4px;
   border-radius: 8px;
   border: 1px solid var(--black-900);
-  background: #d3d3d3 50%;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -54,12 +53,6 @@
   background-color: transparent;
   border: none;
   stroke: var(--black-900);
-}
-.close-svg{
-    display: block;
-     stroke: black;
-     fill: black;
-    // filter: brightness(0) invert(1);
 }
 
 .name-book {
