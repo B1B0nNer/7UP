@@ -1,10 +1,4 @@
-%centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-%visually-hidden {
+.is-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -16,5 +10,3 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-

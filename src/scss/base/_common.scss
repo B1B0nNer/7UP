@@ -1,53 +1,58 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
-    margin: 0;
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
+ol,
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 input,
 textarea {
-    cursor: auto;
+  cursor: auto;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
 button {
-    font: inherit;
-    cursor: pointer;
+  font: inherit;
+  cursor: pointer;
 }
 
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
 body {
-    background-color: var(--white-100);  /*  основні стилі для сторінки */
-    color: var(--black-900);
-    font-size: 14px;
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: var(--bold);
-    line-height: 1.2;
-    letter-spacing: -0.56px;
+  background-color: var(--white-100); /*  основні стилі для сторінки */
+  color: var(--black-900);
+  font-size: 14px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 1.2;
+  letter-spacing: -0.56px;
 }
