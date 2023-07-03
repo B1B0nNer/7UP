@@ -58,6 +58,6 @@ const book2 =
     ],
 };
 
-localStorage.setItem('642fd89ac8cf5ee957f122da', JSON.stringify(book1));
-localStorage.setItem('642fd89ac8cf5ee957f122db', JSON.stringify(book2));
+// localStorage.setItem('642fd89ac8cf5ee957f122da', JSON.stringify(book1));
+// localStorage.setItem('642fd89ac8cf5ee957f122db', JSON.stringify(book2));
 localStorage.setItem('theme', 'dark');

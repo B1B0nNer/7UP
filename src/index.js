@@ -1,3 +1,5 @@
+import './js/firebase_sandbox'
+import './js/firebase'
 import './js/header';
 import './js/loader';
 import './js/scroll_up';
