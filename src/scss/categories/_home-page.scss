@@ -1,0 +1,6 @@
+.home-page-wrapper {
+  padding-top: 104px;
+  @include tablet {
+    padding-top: 112px;
+  }
+}
