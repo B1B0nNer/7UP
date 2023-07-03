@@ -1,31 +1,27 @@
-// const divEl = document.querySelector('.js-cart');
-// divEl.addEventListener('click', openModal);
-// import  basicLightBox  from 'basiclightbox';
-
-// import 'basicli'
 import * as basicLightbox from 'basiclightbox';
 const bodyEl = document.querySelector('body');
 const URL = 'https://books-backend.p.goit.global/books/';
 let idBook = '';
+
 const objShop = {
-  Amazon:
-    '<img src="../images/amazon.png" alt="logo Amazon" width="62" height="19"></img>',
+  Amazon: '<img src= "./images/amazon.png" alt="logo Amazon" width="62" height="19"></img>',
   'Apple Books':
-    '<img src="../images/apple.png" alt="logo Amazon" width="62" height="19"></img>',
+    '<img src="./images/apple.png" alt="logo Apple" width="62" height="19"></img>',
   'Barnes and Noble':
-    '<img src="../images/baren-nobel.png" alt="logo Barnes and Noble" width="33" height="33"></img>',
+    '<img src="./images/baren-nobel.png" alt="logo Barnes and Noble" width="33" height="33"></img>',
   'Books-A-Million':
-    '<img src="../images/books-a-million.png" alt="logo Books A Million" width="62" height="28"></img>',
+    '<img src="./images/books-a-million.png" alt="logo Books A Million" width="62" height="28"></img>',
   Bookshop:
-    '<img src="../images/book-shop.png" alt="logo Bookshop" width="33" height="33"></img>',
+    '<img src="./images/book-shop.png" alt="logo Bookshop" width="33" height="33"></img>',
   IndieBound:
-    '<img src="../images/india-book.png" alt="logo Indie Bound" width="35" height="28"></img>',
+    '<img src="./images/india-book.png" alt="logo Indie Bound" width="35" height="28"></img>',
 };
 
 async function getInfoAboutBook(bookId) {
   const response = await fetch(`${URL}${bookId}`);
   const dataRespons = await response.json();
   const bookObj = {
+    id:dataRespons._id,
     img: dataRespons.book_image,
     bookName: dataRespons.list_name,
     author: dataRespons.author,
@@ -38,6 +34,7 @@ async function getInfoAboutBook(bookId) {
 function getImeges(name) {
   if (name in objShop) {
     const image = objShop[name];
+    // console.log(image)
     return image;
   } else return '';
 }
@@ -47,14 +44,12 @@ async function addConten(bookId) {
   const shopsName = bookObj.shops
     .map(({ name, url }) => {
       const pictur = getImeges(name);
-      return `<li class="item item-book"><a href="${url}" target="_blank" class="link link-image">${pictur}
-    </a></li>`;
-    })
-    .join('\n');
+      return `<li class="item item-book"><a href="${url}" target="_blank" class="link link-image">${pictur}</a></li>`;
+    }).join('\n');
   let modalHtml = ` <div class="container-modal js-modal">
       <button type='button' class="close-button">
       <svg class="close-svg" width="24" height="24">
-                    <use href="../images/icon.svg#icon-x-close"></use>
+                    <use href="./images/icon.svg#icon-x-close"></use>
                   </svg>
                   </button>
                   <div class="info-book-conteiner">
@@ -111,7 +106,6 @@ export async function openModal(event) {
     event.target.nodeName === 'LI'
       ? event.target.dataset.bookId
       : event.target.parentElement.dataset.bookId;
-  // console.log(idBook);
 
   const instance = basicLightbox.create(await addConten(idBook), {
     onShow: () => {
@@ -125,7 +119,6 @@ export async function openModal(event) {
   });
 
   instance.element().querySelector('.close-button').onclick = instance.close;
-  console.log(instance.show());
   instance.show();
 
   const btnAddEl = document.querySelector('#add');
@@ -133,7 +126,7 @@ export async function openModal(event) {
   const textElRemove = document.querySelector('.txt-remove');
   const bookObj = await getInfoAboutBook(idBook);
 
-  if (localStorage.getItem(bookObj.bookName) !== null) {
+  if (localStorage.getItem(bookObj.id) !== null) {
     btnAddEl.classList.add('hidden');
   } else {
     btnRemoveEl.classList.add('hidden');
