@@ -20,6 +20,7 @@
   --blue-900: rgba(79, 46, 232, 0.4);
   --blue: #4f2ee8;
   --yellow: #eac645;
+  --filter: 0%;
 }
 /* DARK */
 
@@ -31,4 +32,5 @@
   --white-100: #111;
   --shopListAdd: #202024;
   --btn_SighUp: #f6f6f6;
+  --filter: invert(100%);
 }
