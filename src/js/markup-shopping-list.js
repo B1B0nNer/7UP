@@ -24,7 +24,17 @@ const objShop = {
     `<img src="${indieBound}" alt="logo Indie Bound" width="20" height="16">`,
 };
 
-let arrSelectedBooks = checkLocalStorage() || [];
+let arrSelectedBooks = [];
+arrSelectedBooks = checkLocalStorage() || [];
+
+if (arrSelectedBooks.length !== 0) {
+  emptyListRef.style.display = "none";
+  shoppingListRef.style.display = "flex";
+  markupShoppingList(arrSelectedBooks);
+} else {
+  emptyListRef.style.display = "block";
+  shoppingListRef.style.display = "none";
+};
 
 function checkLocalStorage() {
     for (let i = 0; i < localStorage.length; i++) {
@@ -34,20 +44,8 @@ function checkLocalStorage() {
       arrSelectedBooks.push(value);
     };
   };
-  console.log('arrSelectedBooks from checkLocalStorage()', arrSelectedBooks);
+  return arrSelectedBooks;
 };
-
-console.log('second', localStorage.length);
-
-if (arrSelectedBooks.length !== 0) {
-  console.log('second', arrSelectedBooks);
-  emptyListRef.style.display = "none";
-  markupShoppingList(arrSelectedBooks);
-} else {
-  emptyListRef.style.display = "block";
-};
-
-console.log('third');
 
 function getImages(name) {
   if (name in objShop) {
