@@ -7,6 +7,7 @@ import {
 } from './all-categories';
 
 const bestSellersRef = document.querySelector('.best-sellers');
+const homePageTitle = document.querySelector('.home-page__title');
 
 export default function onCategoryHandle(e) {
   if (e.target.nodeName !== 'LI') {
@@ -21,6 +22,8 @@ export default function onCategoryHandle(e) {
     createTopBestSellersMarkup()
       .then(markup => {
         bestSellersRef.innerHTML = markup;
+        homePageTitle.innerHTML =
+          'Best Sellers <span class="home-page__title--accent">Books';
       })
       .catch(e => {
         console.log(e.message);

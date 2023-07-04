@@ -77,7 +77,7 @@
 /* -------------------------------------------------------- */
 .donate-container {
   width: 100%;
-  max-width: 335px;
+  // max-width: 356px;
   height: 352px;
   padding-left: 40px;
   padding-top: 24px;
@@ -90,6 +90,16 @@
   );
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
   border-radius: 16px;
+  margin-bottom: 40px;
+
+  @include tablet {
+    width: 335px;
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    width: 356;
+  }
 }
 
 .donate-paragraph {

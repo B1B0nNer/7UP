@@ -13,7 +13,7 @@
   padding-inline-start: 0px;
   // margin-left: auto;
   // margin-right: auto;
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
 
   color: var(--black-700);
   font-size: 16px;
@@ -46,7 +46,7 @@
   text-transform: uppercase;
 }
 
-.title {
+.home-page__title {
   color: var(--black-900);
   font-size: 32px;
   font-family: 'DM Sans', sans-serif;
@@ -66,7 +66,7 @@
   }
 }
 
-.title--accent {
+.home-page__title--accent {
   color: var(--blue);
 }
 
@@ -89,9 +89,11 @@
   }
 }
 
-// .best-sellers-book__by-category {
-//   margin-bottom: 40px;
-// }
+.best-sellers-book__by-category {
+  @include desktop {
+    width: 180px;
+  }
+}
 
 .best-sellers-category:not(:last-child) {
   margin-bottom: 40px;
@@ -214,5 +216,6 @@
 
   @include desktop {
     max-width: 1440px;
+    padding: 0;
   }
 }

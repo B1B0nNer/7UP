@@ -3,13 +3,13 @@ import Notiflix from 'notiflix';
 
 const api = new BooksApiService();
 const bestSellersRef = document.querySelector('.best-sellers');
-const titleRef = document.querySelector('.title');
+const titleRef = document.querySelector('.home-page__title');
 
 export function renderCategoryName(option) {
   const words = option.list_name.split(' ');
   const accentWord = words.pop();
   const blackWords = words.join(' ');
-  const markup = `${blackWords} <span class="title--accent">${accentWord}</span>`;
+  const markup = `${blackWords} <span class="home-page__title--accent">${accentWord}</span>`;
   return markup;
 }
 

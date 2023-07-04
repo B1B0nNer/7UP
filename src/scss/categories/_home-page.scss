@@ -3,4 +3,51 @@
   @include tablet {
     padding-top: 112px;
   }
+
+  @include desktop {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.all-categories-and-support-wrapper {
+  @include tablet {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    column-gap: 32px;
+  }
+
+  @include desktop {
+    display: block;
+    padding: 0;
+    margin-right: 40px;
+  }
+}
+
+.home-page__all-categories-container,
+.home-page__support-ukraine-container {
+  @include tablet {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.home-page__all-categories-container {
+  margin-bottom: 40px;
+  @include tablet {
+    width: 337px;
+  }
+
+  @include desktop {
+    margin-bottom: 86px;
+    width: 356;
+  }
 }
