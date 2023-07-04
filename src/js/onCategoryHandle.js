@@ -1,6 +1,4 @@
-import BooksApiService from './BooksApiService';
-
-import { renderCategoryName, renderBook } from './category';
+import { createCategory } from './category';
 import Notiflix from 'notiflix';
 
 import {
@@ -8,11 +6,8 @@ import {
   accentSelectedTitle,
 } from './all-categories';
 
-const titleRef = document.querySelector('.title');
 const bestSellersRef = document.querySelector('.best-sellers');
-const api = new BooksApiService();
-
-// const bestSellersRef = document.querySelector('.best-sellers');
+const homePageTitle = document.querySelector('.home-page__title');
 
 export default function onCategoryHandle(e) {
   if (e.target.nodeName !== 'LI') {
@@ -21,14 +16,14 @@ export default function onCategoryHandle(e) {
 
   accentSelectedTitle(e);
 
-  // console.log(arrOfCategories);
-  // console.log(e.currentTarget.children);
-  // console.log(e.target.classList);
-
   if (e.target.dataset.categoryName === 'All categories') {
+    bestSellersRef.classList.remove('one-category');
+
     createTopBestSellersMarkup()
       .then(markup => {
         bestSellersRef.innerHTML = markup;
+        homePageTitle.innerHTML =
+          'Best Sellers <span class="home-page__title--accent">Books';
       })
       .catch(e => {
         console.log(e.message);
@@ -36,17 +31,9 @@ export default function onCategoryHandle(e) {
       });
     return;
   }
+  const categoryName = e.target.dataset.categoryName;
 
-  api
-    .getBooks(e.target.dataset.categoryName)
-    .then(value => {
-      value.map(value => (titleRef.innerHTML = renderCategoryName(value)));
-      bestSellersRef.innerHTML = renderBook(value);
-    })
-    .catch(error => {
-      console.log(error.message);
-      Notiflix.Report.failure('Error', `${error}`, 'OK');
-    });
+  createCategory(categoryName);
 
   // if (e.target.dataset.categoryName === 'Advice How-To and Miscellaneous') {
   // console.log('a');s
@@ -57,3 +44,5 @@ export default function onCategoryHandle(e) {
   // api.getBooks(e.target.dataset.categoryName);
   // console.log(e.target.dataset.categoryName);
 }
+
+export { createCategory };

@@ -1,51 +1,35 @@
 /* ////////////////////////////////////////// THE START OF GLOBAL STYLES////////////////////////////////// */
 
 /* Reset styles */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
 
-ul,
-ol {
-  list-style: none;
-}
+// ul,
+// ol {
+//   list-style: none;
+// }
 
-button {
-  border: none;
-  cursor: pointer;
-}
+// img,
+// picture,
+// svg {
+//   display: block;
+//   max-width: 100%;
+// }
 
-img,
-picture {
-  display: block;
-  max-width: 100%;
-}
+// a {
+//   text-decoration: none;
+//   color: inherit;
+// }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-body {
-  background-color: #F6F6F6;
-}
+// body {
+//   background-color: #f6f6f6;
+// }
 
 /* media rules */
 
-.container {
-  width: 375px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+// .container {
+//   width: 375px;
+//   margin: 0 auto;
+//   padding: 0 20px;
+// }
 
 /* @media screen and (max-width: 480px) {
   .container {
@@ -53,19 +37,19 @@ body {
   }
 } */
 
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding: 0 32px;
-  }
-}
+// @media screen and (min-width: 768px) {
+//   .container {
+//     width: 768px;
+//     padding: 0 32px;
+//   }
+// }
 
-@media screen and (min-width: 1440px) {
-  .container {
-    width: 1440px;
-    padding: 0 24px;
-  }
-}
+// @media screen and (min-width: 1440px) {
+//   .container {
+//     width: 1440px;
+//     padding: 0 24px;
+//   }
+// }
 
 .visual-hidden {
   position: absolute;
@@ -80,13 +64,10 @@ body {
   margin: -1px;
 }
 
-
 .main-wrapper {
   flex: 1;
 }
 /* //////////////////////////////////////////END OF GLOBAL STYLES////////////////////////////////// */
-
-
 
 /* -------------------------------------------------------- */
 /* -------------------------------------------------------- */
@@ -95,17 +76,34 @@ body {
 /* -------------------------------------------------------- */
 /* -------------------------------------------------------- */
 .donate-container {
-  width: 335px;
+  width: 100%;
+  // max-width: 356px;
   height: 352px;
   padding-left: 40px;
   padding-top: 24px;
-  background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+  padding-bottom: 20px;
+  padding-right: 40px;
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #ffffff 100%
+  );
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
   border-radius: 16px;
+  margin-bottom: 40px;
+
+  @include tablet {
+    width: 335px;
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    width: 356;
+  }
 }
 
 .donate-paragraph {
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -127,7 +125,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: -0.04em;
 }
 
@@ -199,7 +197,7 @@ body {
   background-color: white;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
+  // cursor: pointer;
   outline: none;
   padding: 0;
   margin: 0 auto;
@@ -214,7 +212,7 @@ body {
 }
 
 .donate-arrow {
-  fill: #4F2EE8;
+  fill: #4f2ee8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,7 +223,7 @@ body {
 
 .donate-button:hover,
 .donate-arrow:focus {
-  background-color: #D0D0D0;
+  background-color: #d0d0d0;
 }
 
 /* -----------------------! Arrow!--------------------------------- */
@@ -234,7 +232,7 @@ body {
 .donate-button-up {
   width: 32px;
   height: 32px;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -246,7 +244,7 @@ body {
 }
 
 .donate-arrow-up {
-  fill: #FFFFFF;
+  fill: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;

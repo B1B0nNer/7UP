@@ -36,3 +36,18 @@ btnSingUp.addEventListener('click', e => {
   btnSingIn.disabled = false;
 });
 
+const openAutorizationBtnRef = document.querySelector('.open-autorization-btn');
+const authorizationBacdropRef = document.querySelector(
+  '.authorization__bacdrop'
+);
+const closeAuthorizationBtnRef = document.querySelector(
+  '.authorization__button__close'
+);
+
+openAutorizationBtnRef.addEventListener('click', () => {
+  authorizationBacdropRef.classList.remove('is-hidden');
+});
+
+closeAuthorizationBtnRef.addEventListener('click', () => {
+  authorizationBacdropRef.classList.add('is-hidden');
+});

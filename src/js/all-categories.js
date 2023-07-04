@@ -1,5 +1,6 @@
 import BooksApiService from './BooksApiService';
 import onCategoryHandle from './onCategoryHandle';
+import Notiflix from 'notiflix';
 
 // import openModal from '';
 
@@ -49,10 +50,12 @@ createTopBestSellersMarkup()
   });
 
 async function createTopBestSellersMarkup() {
-  let markup = await api.getTopBooks().then(categotiesTop => {
-    return categotiesTop
-      .map(
-        categoryTop => `<li class="best-sellers-category">
+  let markup = await api
+    .getTopBooks()
+    .then(categotiesTop => {
+      return categotiesTop
+        .map(
+          categoryTop => `<li class="best-sellers-category">
         <p class="category-title">${categoryTop.list_name}</p>
         <ul class="best-sellers__by-category">
       ${categoryTop.books
@@ -69,9 +72,14 @@ async function createTopBestSellersMarkup() {
           categoryTop.list_name
         }">see more</button>
         </li>`
-      )
-      .join('');
-  });
+        )
+        .join('');
+    })
+    .catch(error => {
+      console.log(error.message);
+      allCategoriesRef.innerHTML = 'No information';
+      Notiflix.Report.failure('Error', 'Try again later!', 'OK');
+    });
 
   return markup;
 }
