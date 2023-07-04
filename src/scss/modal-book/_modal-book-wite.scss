@@ -1,14 +1,15 @@
+@keyframes vilet {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+
+  }
+}
 .hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
+display: none;
 }
 
 .container-modal {
@@ -119,6 +120,8 @@
 }
 
 .btn-local {
+  animation-name: vilet;
+    animation-duration: 500ms;
   margin: 0 auto;
   width: 100%;
   border-radius: 40px;
@@ -143,6 +146,8 @@
 }
 
 .txt-remove {
+  animation-name: vilet;
+    animation-duration: 500ms;
   margin: 0 auto;
   margin-top: 8px;
   max-width: 210px;

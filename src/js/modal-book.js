@@ -145,16 +145,16 @@ export async function openModal(event) {
   }
   btnAddEl.addEventListener('click', () => {
     addLocal(idBook, bookObj);
-    btnAddEl.classList.add('hidden');
-    btnRemoveEl.classList.remove('hidden');
-    textElRemove.classList.remove('hidden');
+     btnAddEl.classList.add('hidden');
+    btnRemoveEl.classList.remove('hidden')
+    textElRemove.classList.remove('hidden')
   });
 
   btnRemoveEl.addEventListener('click', () => {
     localStorage.removeItem(idBook);
     btnAddEl.classList.remove('hidden');
-    btnRemoveEl.classList.add('hidden');
-    textElRemove.classList.add('hidden');
+    btnRemoveEl.classList.add('hidden')
+    textElRemove.classList.add('hidden')
   });
 }
 
