@@ -24,7 +24,6 @@
 }
 
 .empty-message {
-    // color: var(--black-750);
     color: var(--black-750);
     margin-bottom: 14px;
     font-weight: var(--regular);
@@ -132,11 +131,10 @@
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .card-author-shoplist {
+    margin-right: auto;
     max-width: 97px;
     color: var(--black-500);
     font-size: 12px;
@@ -176,13 +174,14 @@
 }
 
 .shop-item img:is(:hover, :focus) {
+
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+
 }
 
 .shop-link-image {
     display: block;
     text-align: center;
-
 }
 
 .shop-link-image img {
@@ -202,7 +201,6 @@
 @media screen and (max-width: 400px) {
 
 }
-
 /* +++++++++++ Tablet ++++++++++++ */
 
 @media screen and (min-width: 768px) {
@@ -278,7 +276,7 @@
         max-width: 100%;
     }
 
-        .shop-link-image img {
+.shop-link-image img {
             max-width: 48px;
             max-height: 28px;
         }
@@ -286,7 +284,6 @@
 }
 
 /* +++++++++++ Desktop ++++++++++++ */
-
 @media screen and (min-width: 1440px) {
 .section-shopping-list {
     margin-top: 72px;

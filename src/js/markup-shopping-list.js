@@ -47,8 +47,6 @@ function checkLocalStorage() {
   return arrSelectedBooks;
 };
 
-console.log('third');
-
 function getImages(name) {
   if (name in objShop) {
     const image = objShop[name];
