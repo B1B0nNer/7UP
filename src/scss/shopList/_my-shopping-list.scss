@@ -25,7 +25,7 @@
 
 .empty-message {
     // color: var(--black-750);
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--black-750);
     margin-bottom: 14px;
     font-weight: var(--regular);
     line-height: 1.29;
@@ -66,6 +66,7 @@
     background-color: var(--blue);
     border-radius: 28px;
     cursor: pointer;
+    stroke: var(--black-900);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -73,19 +74,6 @@
 .delate-btn:focus {
     transform: scale(1.2);
 }
-
-.delate-svg {
-    fill: var(--white-100);
-    stroke: var(--white-100);
-    color: var(--white-100);
-    // transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-// .delate-btn:hover .delate-svg,
-// .delate-btn:focus .delate-svg {
-//     transform: scale(2);
-// }
 
 .img-shoplist-card {
     border-radius: 8px;
@@ -102,7 +90,6 @@
     letter-spacing: -0.64px;
     text-transform: uppercase;
     max-width: 144px;
-    max-height: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -116,7 +103,6 @@
     letter-spacing: 0.36px;
     margin-bottom: 8px;
     max-width: 165px;
-    max-height: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -141,7 +127,11 @@
 
 .wrapper-card-shoplist-footer {
     max-width: 193px;
-    max-height: 16px;
+    align-items: baseline;
+    // max-height: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
     display: flex;
     justify-content: space-between;
 }
@@ -162,14 +152,14 @@
 .shops-list {
     display: flex;
     gap: 8px;
-    justify-content: start;
     align-items: center;
     max-width: 80px;
-    max-height: 16px;
+    // max-height: 16px;
     padding-bottom: 5px;
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: auto;
+    stroke: var(--black-900);
 }
 
 .shops-list::-webkit-scrollbar {
@@ -181,11 +171,12 @@
 }
 
 .shop-item {
-    flex: 0 0 35%;
+    background-color: transparent;
+        filter: var(--filter);
 }
 
 .shop-item img:is(:hover, :focus) {
-    text-shadow: 0px 2px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .shop-link-image {
@@ -196,7 +187,140 @@
 
 .shop-link-image img {
     margin: 0;
-    max-width: 62px;
+    max-width: 35px;
     height: auto;
+}
 
+/* +++++++++++ Phone ++++++++++++ */
+
+@media screen and (max-width: 767px) {
+
+}
+
+/* +++++++++++ Only small Phone ++++++++++++ */
+
+@media screen and (max-width: 400px) {
+
+}
+
+/* +++++++++++ Tablet ++++++++++++ */
+
+@media screen and (min-width: 768px) {
+    .section-shopping-list {
+        margin-top: 64px;
+    }
+
+    .title-shoplist {
+        font-size: 48px;
+        line-height: 1.08;
+        letter-spacing: -1.92px;
+    }
+
+    .empty-list {
+        margin-top: 140px;
+        width: 349px;
+    }
+
+    .empty-message {
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.36px;
+    }
+
+    .shopplist-item {
+        max-width: 704px;
+        height: 213px;
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .delate-btn {
+        top: 24px;
+        right: 24px;
+        width: 34px;
+        height: 34px;
+        background-color: var(--blue);
+        border-radius: 34px;
+    }
+
+    .card-shopplist {
+        max-width: 508px;
+    }
+
+    .card-title-shoplist {
+        max-width: 450px;
+    }
+
+    .card-category-shoplist {
+        margin-bottom: 14px;
+        max-width: 450px;
+    }
+
+    .card-description-shoplist {
+        margin-bottom: 32px;
+        letter-spacing: -0.56px;
+        max-width: 508px;
+        max-height: 53px;
+    }
+
+    .wrapper-card-shoplist-footer {
+        max-width: 508px;
+        // max-height: 22px;
+    }
+
+    .card-author-shoplist {
+        max-width: 100%;
+    }
+
+    .shops-list {
+        gap: 16px;
+        max-width: 100%;
+    }
+
+        .shop-link-image img {
+            max-width: 48px;
+            max-height: 28px;
+        }
+
+}
+
+/* +++++++++++ Desktop ++++++++++++ */
+
+@media screen and (min-width: 1440px) {
+.section-shopping-list {
+    margin-top: 72px;
+}
+
+.shopplist-item {
+    max-width: 996px;
+}
+
+.delate-btn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 34px;
+}
+
+.card-shopplist {
+    max-width: 808px;
+}
+
+.card-title-shoplist {
+    max-width: 760px;
+}
+
+.card-category-shoplist {
+    max-width: 760px;
+}
+
+.card-description-shoplist {   
+    max-width: 808px;
+}
+
+.wrapper-card-shoplist-footer {
+    max-width: 808px;
+    // max-height: 30px;
+}
 }
