@@ -34,7 +34,6 @@ function generateDonateFundsMarkup(donateFunds) {
       `;
     })
     .join('');
-
   return markup;
 }
 
