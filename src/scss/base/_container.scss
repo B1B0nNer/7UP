@@ -1,0 +1,43 @@
+@mixin tel {
+  @media screen and (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  @include tel {
+    max-width: 428px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include tablet {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include desktop {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

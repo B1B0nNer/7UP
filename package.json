@@ -21,14 +21,22 @@
     "axios": "^1.4.0",
     "basiclightbox": "^5.0.4",
     "firebase": "^9.23.0",
+    "graph": "^0.2.0",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6"
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.9.3",
+    "@parcel/packager-xml": "^2.9.3",
+    "@parcel/transformer-inline-string": "^2.9.3",
     "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-webmanifest": "^2.9.3",
+    "@parcel/transformer-xml": "^2.9.3",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }

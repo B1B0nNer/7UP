@@ -1,0 +1,65 @@
+// .home-container {
+//   max-width: 425px;
+// }
+
+.best-sellers.one-category {
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+  }
+  @include desktop {
+    column-gap: 24px;
+  }
+}
+
+.best-sellers__by-category {
+  margin-bottom: 8px;
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    margin-bottom: 20px;
+  }
+
+  @include desktop {
+    column-gap: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+.selected-category-item {
+  @include tablet {
+    max-width: 218px;
+  }
+  @include desktop {
+    width: 180px;
+  }
+}
+
+.best-sellers-book__by-category {
+  @include tablet {
+    max-width: 218px;
+  }
+
+  // @include desktop {
+  //   max-width: 180px;
+  // }
+}
+
+.selected-category-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.best-sellers-book__img {
+  @include tablet {
+    width: 218px;
+    height: 316px;
+  }
+
+  @include desktop {
+    width: 180px;
+    height: 256px;
+  }
+}

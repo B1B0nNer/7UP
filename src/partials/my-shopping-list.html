@@ -1,0 +1,30 @@
+<section class="section-shopping-list">
+  <div class="container container-shoplist">
+    <h1 class="title-shoplist">
+      Shopping <span class="acсent-shoplist">List</span>
+    </h1>
+    <div class="empty-list">
+      <p class="empty-message">
+        This page is empty, add some books and proceed to order.
+      </p>
+      <picture>
+        <source
+          srcset="
+            /src/images/books-tablet@1x.jpg 1x,
+            /src/images/books-tablet@2x.jpg 2x
+          "
+          media="(min-width: 768px)"
+        />
+        <source
+          srcset="
+            /src/images/books-mobile@1x.jpg 1x,
+            /src/images/books-mobile@2x.jpg 2x
+          "
+          media="(max-width: 767px)"
+        />
+        <img src="/src/images/books-mobile@1x.jpg" alt="Books" />
+      </picture>
+    </div>
+    <ul class="shopping-list"></ul>
+  </div>
+</section>

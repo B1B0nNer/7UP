@@ -18,9 +18,9 @@ export default class BooksApiService {
     return data;
   }
 
-  // Отримати масив об'єктів з двома полями: 
-  // list_name: назва категорії, 
-  // books: масив топ 5 книг за категорією 
+  // Отримати масив об'єктів з двома полями:
+  // list_name: назва категорії,
+  // books: масив топ 5 книг за категорією
   async getTopBooks() {
     const url = `${BooksApiService.URL}${BooksApiService.ENDPOINT_TOP_BOOKS}`;
 

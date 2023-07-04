@@ -1,0 +1,221 @@
+// .container {
+//   //   margin: 40px 20px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding: 20px;
+// }
+
+.all-categories-list {
+  height: 228px;
+  // max-width: 335px;
+
+  overflow-y: scroll;
+  padding-inline-start: 0px;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-bottom: 40px;
+
+  color: var(--black-700);
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: var(--regular);
+  line-height: 1.13;
+  letter-spacing: -0.32px;
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+    height: 472px;
+  }
+}
+
+.all-categories-list__item {
+  cursor: pointer;
+}
+
+.all-categories-list__item:not(:last-child) {
+  //   display: block;
+  margin-bottom: 24px;
+}
+
+.all-categories-list__item.current-category {
+  font-weight: var(--bold);
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.home-page__title {
+  color: var(--black-900);
+  font-size: 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 1.19;
+  letter-spacing: -1.28px;
+
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet {
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -1.92px;
+  }
+}
+
+.home-page__title--accent {
+  color: var(--blue);
+}
+
+.category-title {
+  color: var(--black-500);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: var(--regular);
+  line-height: 1.29;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 18px;
+
+  @include tablet {
+    line-height: 1.71;
+  }
+}
+
+.best-sellers-book__by-category {
+  @include desktop {
+    width: 180px;
+  }
+}
+
+.best-sellers-category:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.best-sellers-book__by-category:not(:first-child) {
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+.best-sellers-book__by-category:not(:nth-child(-n + 3)) {
+  @media screen and (max-width: 1440px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+.best-sellers-book__img {
+  display: block;
+  // max-width: 335px;
+  // max-height: 485px;
+  max-width: 425px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 14px;
+}
+
+.best-sellers-book__title {
+  margin-bottom: 4px;
+  color: var(--black-900);
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 1.13;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+}
+
+.best-sellers-book__author {
+  color: var(--black-500);
+  font-size: 12px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-style: var(--italic);
+  font-weight: var(--regular);
+  line-height: 14px;
+  letter-spacing: -0.48px;
+
+  margin-bottom: 8px;
+}
+
+.best-sellers__btn-see-more {
+  display: block;
+  margin-left: auto;
+  border-radius: 40px;
+  border: 2px solid var(--blue);
+  padding: 14px 28px;
+
+  color: var(--black-900);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 1.29;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  background-color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: var(--blue);
+    color: var(--white-100);
+    cursor: pointer;
+  }
+}
+
+.home-container {
+  max-width: 425px;
+
+  @include tablet {
+    max-width: 768px;
+  }
+
+  @include desktop {
+    max-width: 1440px;
+  }
+}
+
+.container.selected-category__list {
+  padding-bottom: 80px;
+  max-width: 425px;
+
+  @include tablet {
+    max-width: 768px;
+  }
+
+  @include desktop {
+    max-width: 1440px;
+    padding: 0;
+  }
+}
