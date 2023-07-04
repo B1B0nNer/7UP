@@ -55,7 +55,9 @@ display: none;
   border: none;
   stroke: var(--black-900);
 }
-
+button:hover svg {
+  stroke: var(--blue);
+}
 .name-book {
   margin-top: 14px;
   color: var(--black-900);
