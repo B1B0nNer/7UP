@@ -124,7 +124,6 @@ export async function firebase_registration(user_email, user_password, user_nick
     @returns {Promise<void>} - Промис, который разрешается, когда авторизация успешна, или отклоняется с ошибкой.
 */
 export function firebase_autorization(user_email, user_password) {
-
     if (!auth.currentUser) {
 
         signInWithEmailAndPassword(auth, user_email, user_password)
