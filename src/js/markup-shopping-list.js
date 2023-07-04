@@ -24,24 +24,37 @@ const objShop = {
     `<img src="${indieBound}" alt="logo Indie Bound" width="20" height="16">`,
 };
 
+let arrSelectedBooks = checkLocalStorage() || [];
+
+function checkLocalStorage() {
+    for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if (key !== 'theme') {
+      let value = JSON.parse(localStorage.getItem(key))
+      arrSelectedBooks.push(value);
+    };
+  };
+  console.log('arrSelectedBooks from checkLocalStorage()', arrSelectedBooks);
+};
+
+console.log('second', localStorage.length);
+
+if (arrSelectedBooks.length !== 0) {
+  console.log('second', arrSelectedBooks);
+  emptyListRef.style.display = "none";
+  markupShoppingList(arrSelectedBooks);
+} else {
+  emptyListRef.style.display = "block";
+};
+
+console.log('third');
+
 function getImages(name) {
   if (name in objShop) {
     const image = objShop[name];
     return image;
   } else return '';
 };
-
-let arrSelectedBooks = [];
-
-console.log('first', localStorage.length);
-for (let i = 0; i < localStorage.length; i++) {
-  let key = localStorage.key(i);
-  if (key !== 'theme') {
-    let value = JSON.parse(localStorage.getItem(key))
-  arrSelectedBooks.push(value);
-  };
-};
-console.log(arrSelectedBooks);
 
 function markupShoppingList(arrSelectedBooks) {
   const arrCardsSelectedBooks = arrSelectedBooks.map(({ id, bookName, author, img, description, title, shops }) => {
@@ -74,12 +87,4 @@ function markupShoppingList(arrSelectedBooks) {
   shoppingListRef.innerHTML = arrCardsSelectedBooks.join('');   
 };
 
-console.log('second', localStorage.length);
 
-if (arrSelectedBooks.length !== 0) {
-  console.log('second', arrSelectedBooks);
-  emptyListRef.style.display = "none";
-  markupShoppingList(arrSelectedBooks);
-} else {
-  emptyListRef.style.display = "block";
-};
