@@ -42,7 +42,7 @@
 
 .all-categories-list__item.current-category {
   font-weight: var(--bold);
-  color: var(--blue);
+  color: var(--blueCategory);
   text-transform: uppercase;
 }
 
@@ -184,7 +184,7 @@
   line-height: 1.29;
   letter-spacing: -0.14px;
   text-transform: uppercase;
-  background-color: #fff;
+  background-color: var(--white-100);
 
   &:hover,
   &:focus {

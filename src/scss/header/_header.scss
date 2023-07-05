@@ -103,6 +103,7 @@
   &--current {
     font-weight: var(--bold);
     background: var(--yellow);
+    color: var(--link-current);
     border-radius: 36px;
     padding: 8px 16px 8px 16px;
 
@@ -117,6 +118,9 @@
       }
     }
   }
+}
+.shop{
+  fill:var(--black-900);
 }
 
 .login-btn {
@@ -158,7 +162,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--white-100);
+    color: var(--swicher);
     font-size: 14px;
     font-family: DM Sans;
     font-style: normal;

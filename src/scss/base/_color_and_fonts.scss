@@ -8,6 +8,7 @@ $cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --bold: 700; /*font-weight:  */
   --italic: italic; /*font-style:  */
   --black-900: #111;
+  --link-current:#111;
   --btn_SighUp: #111; /*для темної теми*/
   --black-800: #202024; /*для темної теми*/
   --black-750: rgba(0, 0, 0, 0.6);
@@ -18,9 +19,12 @@ $cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --black-400: #f6f6f6;
   --white-200: #f3f3f3;
   --white-100: #ffffff;
-  --shopListAdd: #ffffff; /*для темної теми*/
+  --swicher:#ffffff;
+  --swicherDark:#F7F7F7
+  --shopListAdd: #ffffff; 
   --blue-900: rgba(79, 46, 232, 0.4);
   --blue: #4f2ee8;
+  --blueCategory: #4f2ee8;
   --yellow: #eac645;
   --filter: 0%;
 }
@@ -29,10 +33,14 @@ $cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 :root[data-theme='dark'] {
   --black-900: #ffffff;
   --black-750: rgba(255, 255, 255, 0.6);
+  --black-700: rgba(255, 255, 255, 0.60);
   --black-650: rgba(246, 246, 246, 0.5);
   --black-400: #202024;
   --white-100: #111;
+  --link-current: #111;
   --shopListAdd: #202024;
   --btn_SighUp: #f6f6f6;
+  --blueCategory: #eac645;
+  --swicherDark: #F7F7F7;
   --filter: invert(100%);
 }
