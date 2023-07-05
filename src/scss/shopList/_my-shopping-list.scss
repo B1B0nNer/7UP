@@ -24,7 +24,6 @@
 }
 
 .empty-message {
-    // color: var(--black-750);
     color: var(--black-750);
     margin-bottom: 14px;
     font-weight: var(--regular);
@@ -64,10 +63,10 @@
     height: 28px;
     padding: 0;
     background-color: var(--blue);
-    border-radius: 28px;
+    border-radius: 50%;
+    border-style: none;
     cursor: pointer;
-    stroke: var(--black-900);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform $cubic;
 }
 
 .delate-btn:hover,
@@ -81,6 +80,7 @@
 
 .card-shopplist {
     max-width: 193px;
+    min-width: 100px;
 }
 
 .card-title-shoplist {
@@ -113,16 +113,14 @@
     font-weight: var(--regular);
     line-height: 1.29;
     letter-spacing: -0.56px;
-    max-width: 193px;
+    // max-width: 193px;
     max-height: 68px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    /* start showing ellipsis when 3rd line is reached */
     white-space: pre-wrap;
-    /* let the text wrap preserving spaces */
 }
 
 .wrapper-card-shoplist-footer {
@@ -132,11 +130,10 @@
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .card-author-shoplist {
+    margin-right: auto;
     max-width: 97px;
     color: var(--black-500);
     font-size: 12px;
@@ -154,7 +151,6 @@
     gap: 8px;
     align-items: center;
     max-width: 80px;
-    // max-height: 16px;
     padding-bottom: 5px;
     overflow-x: auto;
     white-space: nowrap;
@@ -182,25 +178,12 @@
 .shop-link-image {
     display: block;
     text-align: center;
-
 }
 
 .shop-link-image img {
     margin: 0;
     max-width: 35px;
     height: auto;
-}
-
-/* +++++++++++ Phone ++++++++++++ */
-
-@media screen and (max-width: 767px) {
-
-}
-
-/* +++++++++++ Only small Phone ++++++++++++ */
-
-@media screen and (max-width: 400px) {
-
 }
 
 /* +++++++++++ Tablet ++++++++++++ */
@@ -260,13 +243,12 @@
     .card-description-shoplist {
         margin-bottom: 32px;
         letter-spacing: -0.56px;
-        max-width: 508px;
+        min-width: 508px;
         max-height: 53px;
     }
 
     .wrapper-card-shoplist-footer {
         max-width: 508px;
-        // max-height: 22px;
     }
 
     .card-author-shoplist {
@@ -278,11 +260,10 @@
         max-width: 100%;
     }
 
-        .shop-link-image img {
+.shop-link-image img {
             max-width: 48px;
             max-height: 28px;
         }
-
 }
 
 /* +++++++++++ Desktop ++++++++++++ */
@@ -316,11 +297,10 @@
 }
 
 .card-description-shoplist {   
-    max-width: 808px;
+    min-width: 808px;
 }
 
 .wrapper-card-shoplist-footer {
     max-width: 808px;
-    // max-height: 30px;
 }
 }

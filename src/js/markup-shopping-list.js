@@ -7,8 +7,12 @@ import bookshop from '../images/book-shop.png';
 import indieBound from '../images/india-book.png';
 import noImage from '../images/no-image-new.jpg';
 
-const shoppingListRef = document.querySelector('.shopping-list');
-const emptyListRef = document.querySelector('.empty-list');
+export const refs = {
+  shoppingList: document.querySelector('.shopping-list'),
+  emptyList: document.querySelector('.empty-list')
+};
+
+const { shoppingList, emptyList } = refs;
 
 const objShop = {
   Amazon: `<img src= "${amazon}" alt="logo Amazon" width="32" height="11">`,
@@ -28,16 +32,19 @@ let arrSelectedBooks = [];
 arrSelectedBooks = checkLocalStorage() || [];
 
 if (arrSelectedBooks.length !== 0) {
-  emptyListRef.style.display = "none";
-  shoppingListRef.style.display = "flex";
+  hiddenOrVisual("none", "flex");
   markupShoppingList(arrSelectedBooks);
 } else {
-  emptyListRef.style.display = "block";
-  shoppingListRef.style.display = "none";
+  hiddenOrVisual("block", "none");
+};
+
+export function hiddenOrVisual(statusForEmptyList, statusForShoppingList) {
+  emptyList.style.display = statusForEmptyList;
+  shoppingList.style.display = statusForShoppingList;
 };
 
 function checkLocalStorage() {
-    for (let i = 0; i < localStorage.length; i++) {
+  for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
     if (key !== 'theme') {
       let value = JSON.parse(localStorage.getItem(key))
@@ -47,8 +54,6 @@ function checkLocalStorage() {
   return arrSelectedBooks;
 };
 
-console.log('third');
-
 function getImages(name) {
   if (name in objShop) {
     const image = objShop[name];
@@ -56,15 +61,20 @@ function getImages(name) {
   } else return '';
 };
 
+function markupListOfStore(stores) {
+  return stores.map(({ name, url }) => {
+    const picture = getImages(name);
+    return `<li class="shop-item"><a href="${url}" target="_blank" class="shop-link-image">${picture}</a></li>`;
+  }).join('\n');
+};
+
 function markupShoppingList(arrSelectedBooks) {
   const arrCardsSelectedBooks = arrSelectedBooks.map(({ id, bookName, author, img, description, title, shops }) => {
-    const shopsName = shops.map(({ name, url }) =>  {
-      const picture =  getImages(name);
-      return `<li class="shop-item"><a href="${url}" target="_blank" class="shop-link-image">${picture}</a></li>`;
-    }).join('\n');
+    const shopsName = markupListOfStore(shops);
+
     if (img === '' || !img) {
-    img = `${noImage}`;
-  };
+      img = `${noImage}`;
+    };
       
     return `<li class="shopplist-item" data-idcard="${id}">
         <button type="button" class="delate-btn" data-id="${id}">
@@ -84,5 +94,5 @@ function markupShoppingList(arrSelectedBooks) {
         </div>
       </li>`
   });
-  shoppingListRef.innerHTML = arrCardsSelectedBooks.join('');   
+  shoppingList.innerHTML = arrCardsSelectedBooks.join('');   
 };

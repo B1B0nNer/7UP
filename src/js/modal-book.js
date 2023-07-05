@@ -74,13 +74,13 @@ async function addConten(bookId) {
      <ul class="list shop-list">${shopsName}</ul>
      </div>
      </div>
-     <button type="button" class="btn-local" id='add'>
+     <button type="button" class="btn-local hidden" id='add'>
       add to shopping list
     </button>
-    <button type="button" class="btn-local" id="remove">
+    <button type="button" class="btn-local hidden" id="remove">
       remove from the shopping list
     </button>
-    <p class="txt-remove">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+    <p class="txt-remove hidden">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
     </div>
   `;
   return modalHtml;
@@ -139,22 +139,24 @@ export async function openModal(event) {
 
   if (localStorage.getItem(bookObj.id) !== null) {
     btnAddEl.classList.add('hidden');
+    btnRemoveEl.classList.remove('hidden');
   } else {
+    btnAddEl.classList.remove('hidden');
     btnRemoveEl.classList.add('hidden');
     textElRemove.classList.add('hidden');
   }
   btnAddEl.addEventListener('click', () => {
     addLocal(idBook, bookObj);
-    btnAddEl.classList.add('hidden');
-    btnRemoveEl.classList.remove('hidden');
-    textElRemove.classList.remove('hidden');
+     btnAddEl.classList.add('hidden');
+    btnRemoveEl.classList.remove('hidden')
+    textElRemove.classList.remove('hidden')
   });
 
   btnRemoveEl.addEventListener('click', () => {
     localStorage.removeItem(idBook);
     btnAddEl.classList.remove('hidden');
-    btnRemoveEl.classList.add('hidden');
-    textElRemove.classList.add('hidden');
+    btnRemoveEl.classList.add('hidden')
+    textElRemove.classList.add('hidden')
   });
 }
 

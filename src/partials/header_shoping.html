@@ -1,0 +1,67 @@
+<header>
+  <div class="">
+    <div class="header">
+      <include src="./partials/loader.html"></include>
+      <div class="header__content">
+        <a class="header__logo" href="">
+          <svg class="logo__icon" width="24" height="24">
+            <use href="images/sprite.svg#icon-logo"></use>
+          </svg>
+          <p class="logo__title">Bookshelf</p>
+        </a>
+        <nav class="menu">
+          <ul class="menu__list" id="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="index.html">Home</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link menu__link--current" href="shopping-list.html"
+                >Shopping list
+                <svg class="" width="20" height="20">
+                  <use href="images/sprite.svg#icon-cart"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <div class="menu__substrate"></div>
+        </nav>
+        <div class="switch">
+          <input type="checkbox" />
+        </div>
+        <button class="login-btn" type="button">
+          <p class="login-btn__title authorization__link">
+            Sign up
+            <svg class="login-btn__icon" width="20" height="20">
+              <use href="images/sprite.svg#icon-arrow-narrow-right"></use>
+            </svg>
+          </p>
+        </button>
+        <button class="logout-btn authorization__link" type="button">
+          <p class="logout-btn__title">
+            Log out
+            <svg class="logout-btn__icon" width="20" height="20">
+              <use href="images/sprite.svg#icon-arrow-narrow-right"></use>
+            </svg>
+          </p>
+        </button>
+        <button
+          class="menu__btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu__list"
+        >
+          <svg class="menu__icon" aria-hidden="true" width="28" height="28">
+            <use
+              class="menu__icon-menu"
+              href="images/sprite.svg#icon-menu"
+            ></use>
+            <use
+              class="menu__icon-cross"
+              href="images/sprite.svg#icon-close"
+            ></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

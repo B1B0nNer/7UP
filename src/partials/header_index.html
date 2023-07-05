@@ -12,35 +12,53 @@
         <nav class="menu">
           <ul class="menu__list" id="menu__list">
             <li class="menu__item">
-              <a class="menu__link menu__link--current" href="./index.html">Home</a>
+              <a class="menu__link menu__link--current" href="index.html">Home</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="./shopping-list.html">Shopping
+              <a class="menu__link" href="shopping-list.html"
+                >Shopping list
                 <svg class="" width="20" height="20">
                   <use href="images/sprite.svg#icon-cart"></use>
                 </svg>
               </a>
             </li>
           </ul>
+          <div class="menu__substrate"></div>
         </nav>
         <div class="switch">
           <input type="checkbox" />
         </div>
         <button class="login-btn" type="button">
-          <p class="login-btn__title">Sign up
-            <svg class="" width="20" height="20">
+          <p class="login-btn__title authorization__link">
+            Sign up
+            <svg class="login-btn__icon" width="20" height="20">
               <use href="images/sprite.svg#icon-arrow-narrow-right"></use>
             </svg>
           </p>
         </button>
-          <button
+        <button class="logout-btn" type="button">
+          <p class="logout-btn__title authorization__link">
+            Log out
+            <svg class="logout-btn__icon" width="20" height="20">
+              <use href="images/sprite.svg#icon-arrow-narrow-right"></use>
+            </svg>
+          </p>
+        </button>
+        <button
           class="menu__btn"
           type="button"
           aria-expanded="false"
-          aria-controls="menu__list">
+          aria-controls="menu__list"
+        >
           <svg class="menu__icon" aria-hidden="true" width="28" height="28">
-            <use class="menu__icon-menu" href="images/sprite.svg#icon-menu"></use>
-            <use class="menu__icon-cross" href="images/sprite.svg#icon-close"></use>
+            <use
+              class="menu__icon-menu"
+              href="images/sprite.svg#icon-menu"
+            ></use>
+            <use
+              class="menu__icon-cross"
+              href="images/sprite.svg#icon-close"
+            ></use>
           </svg>
         </button>
       </div>
