@@ -6,9 +6,10 @@ import {
 } from './firebase'
 
 // Variabels
+const authorization__bacdrop = document.querySelector('authorization__bacdrop')
 const sign_up = document.getElementById('sign-up');
 const sign_in = document.getElementById('sign-in');
-
+const logout_btn = document.querySelector('.logout-btn');
 // TRIGERS
 
 // Registration
@@ -40,3 +41,6 @@ sign_in.addEventListener('submit', async (event) => {
         .catch(err => console.log(err))
 
 })
+
+// Log out
+logout_btn.addEventListener('click', firebase_logout)

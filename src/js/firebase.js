@@ -38,20 +38,36 @@ const db = getFirestore(app);
 // FORM METHODS
 // ======================================================================
 
+const open_autorization_btn = document.querySelector('.open-autorization-btn');
+const login_title = document.querySelector('.login-btn__title');
+const authorization__bacdrop = document.querySelector('.authorization__bacdrop');
+const logout_btn = document.querySelector('.logout-btn');
+
 // CHECK USER STATUS
 onAuthStateChanged(auth, (data) => {
-    if (data === null) {
+
+    if (data === null || data === undefined) {
+        // =======================================================
         console.log('Пользователь не авторизован')
         console.log(auth.currentUser)
+        // =======================================================
+
+        login_title.innerHTML = `Sign up`;
+        logout_btn.classList.add('is-hidden');
+        open_autorization_btn.dataset.status = false;
+        authorization__bacdrop.style.display = 'block';
     } else {
-        // const { email, uid, displayName } = data;
-        // user_cradentials = {
-        //     id: uid,
-        //     email: email,
-        //     displayName: displayName,
-        // }
+        // =======================================================
+        console.log('Пользователь авторизован')
         console.log(auth.currentUser)
+        // =======================================================
+
+        login_title.innerHTML = auth.currentUser.displayName;
+        logout_btn.classList.remove('is-hidden');
+        open_autorization_btn.dataset.status = true;
+        authorization__bacdrop.style.display = 'none';
     }
+
 })
 
 // LOGOUT
