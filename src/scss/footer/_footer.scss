@@ -1,5 +1,4 @@
 .footer {
-  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -10,13 +9,23 @@
   align-items: center;
   justify-content: space-between;
 
-  //   @media (width >= 768px) {
-  //     padding: 14px 32px;
-  //   }
+  @media (width >= 768px) {
+    padding: 14px 32px;
+  }
 
-  //   @media (width >= 1440px) {
-  //     padding: 14px 24px;
-  //   }
+  @media (width >= 1440px) {
+    padding: 14px 24px;
+  }
+}
+
+.footer__logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  @media (width <= 768px) {
+    z-index: 1;
+  }
 }
 
 .footer__logo-title {
@@ -25,4 +34,17 @@
   font-weight: 700;
   line-height: 1.13;
   letter-spacing: -0.56px;
+}
+
+.footer__text {
+  display: none;
+
+  @media (width >= 768px) {
+    display: block;
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.13;
+    letter-spacing: -0.56px;
+  }
 }
