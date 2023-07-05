@@ -1,4 +1,4 @@
-import { refs, hiddenOrVisual } from './markup-shopping-list';
+import { refs, hiddenOrVisual } from './markup-shopping-list.js';
 
 const { shoppingList } = refs;
 const delateBtnRefs = document.querySelectorAll('.delate-btn');
