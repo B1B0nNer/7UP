@@ -1,0 +1,28 @@
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer__container {
+  border-top: 1.5px solid #111;
+  display: flex;
+  padding: 18px 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  //   @media (width >= 768px) {
+  //     padding: 14px 32px;
+  //   }
+
+  //   @media (width >= 1440px) {
+  //     padding: 14px 24px;
+  //   }
+}
+
+.footer__logo-title {
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.56px;
+}
