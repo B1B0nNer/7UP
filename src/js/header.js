@@ -7,11 +7,16 @@ const substrate = document.querySelector('.menu__substrate');
 menuButton.addEventListener('click', menuButtonClick);
 
 function menuButtonClick() {
-    let expanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', !expanded);
-    menuButton.classList.toggle('is-open');
-    menuList.classList.toggle('is-open');
-    login.classList.toggle('is-open');
-    logout.classList.toggle('is-open');
-    substrate.classList.toggle('is-open');
+    toggleClass(menuButton, 'is-open');
+    toggleClass(menuList, 'is-open');
+    toggleClass(login, 'is-open');
+    toggleClass(logout, 'is-open');
+    toggleClass(substrate, 'is-open');
+
+    const expanded = menuButton.getAttribute('aria-expanded');
+    menuButton.setAttribute('aria-expanded', expanded === 'true' ? 'false' : 'true');
+}
+
+function toggleClass(element, className) {
+    element.classList.toggle(className);
 }
