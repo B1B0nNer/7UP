@@ -1,9 +1,9 @@
-import './js/header-current-link';
+import './js/header-current-link'
+import './js/dark-theme'; 
 import './js/markup-shopping-list';
 import './js/onClickDelateBtn';
 import './js/firebase_sandbox';
 import './js/firebase';
-import './js/dark-theme'; 
 import './js/header';
 import './js/loader';
 import './js/scroll_up';
