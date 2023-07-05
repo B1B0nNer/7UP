@@ -7,16 +7,25 @@ const substrate = document.querySelector('.menu__substrate');
 menuButton.addEventListener('click', menuButtonClick);
 
 function menuButtonClick() {
-    toggleClass(menuButton, 'is-open');
-    toggleClass(menuList, 'is-open');
-    toggleClass(login, 'is-open');
-    toggleClass(logout, 'is-open');
-    toggleClass(substrate, 'is-open');
+  toggleClass(menuButton, 'is-open');
+  toggleClass(menuList, 'is-open');
+  toggleClass(login, 'is-open');
+  toggleClass(logout, 'is-open');
+  toggleClass(substrate, 'is-open');
 
-    const expanded = menuButton.getAttribute('aria-expanded');
-    menuButton.setAttribute('aria-expanded', expanded === 'true' ? 'false' : 'true');
+  const expanded = menuButton.getAttribute('aria-expanded');
+  menuButton.setAttribute(
+    'aria-expanded',
+    expanded === 'true' ? 'false' : 'true'
+  );
+
+  toggleScrollLock();
 }
 
 function toggleClass(element, className) {
-    element.classList.toggle(className);
+  element.classList.toggle(className);
+}
+
+function toggleScrollLock() {
+  document.body.classList.toggle('scroll-lock');
 }
