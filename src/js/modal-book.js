@@ -80,7 +80,7 @@ async function addConten(bookId) {
     <button type="button" class="btn-local hidden" id="remove">
       remove from the shopping list
     </button>
-    <p class="txt-remove">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+    <p class="txt-remove hidden">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
     </div>
   `;
   return modalHtml;
