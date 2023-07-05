@@ -1,9 +1,11 @@
+import './js/markup-shopping-list';
+import './js/onClickDelateBtn';
 import './js/firebase_sandbox';
 import './js/firebase';
+import './js/dark-theme'; 
 import './js/header';
 import './js/loader';
 import './js/scroll_up';
 import './js/BooksApiService';
 import './js/support-ukraine';
 import './js/reg-window';
-import './js/markup-shopping-list';

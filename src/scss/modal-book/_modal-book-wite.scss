@@ -130,6 +130,7 @@ button:hover svg {
   border: 2px solid var(--blue);
   padding: 14px 23px;
   margin-top: 40px;
+  background-color: transparent;
   color: var(--black-900);
   font-size: 12px;
   font-weight: var(--bold);
@@ -153,7 +154,7 @@ button:hover svg {
   margin: 0 auto;
   margin-top: 8px;
   max-width: 210px;
-  color: #11111180;
+  color:var(--black-650);
   text-align: center;
   font-size: 10px;
   font-weight: var(--regular);
