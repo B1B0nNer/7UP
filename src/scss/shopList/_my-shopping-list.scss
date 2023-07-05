@@ -63,10 +63,10 @@
     height: 28px;
     padding: 0;
     background-color: var(--blue);
-    border-radius: 28px;
+    border-radius: 50%;
+    border-style: none;
     cursor: pointer;
-    stroke: var(--black-900);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform $cubic;
 }
 
 .delate-btn:hover,
@@ -80,6 +80,7 @@
 
 .card-shopplist {
     max-width: 193px;
+    min-width: 100px;
 }
 
 .card-title-shoplist {
@@ -112,16 +113,14 @@
     font-weight: var(--regular);
     line-height: 1.29;
     letter-spacing: -0.56px;
-    max-width: 193px;
+    // max-width: 193px;
     max-height: 68px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    /* start showing ellipsis when 3rd line is reached */
     white-space: pre-wrap;
-    /* let the text wrap preserving spaces */
 }
 
 .wrapper-card-shoplist-footer {
@@ -152,7 +151,6 @@
     gap: 8px;
     align-items: center;
     max-width: 80px;
-    // max-height: 16px;
     padding-bottom: 5px;
     overflow-x: auto;
     white-space: nowrap;
@@ -174,9 +172,7 @@
 }
 
 .shop-item img:is(:hover, :focus) {
-
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-
 }
 
 .shop-link-image {
@@ -190,17 +186,6 @@
     height: auto;
 }
 
-/* +++++++++++ Phone ++++++++++++ */
-
-@media screen and (max-width: 767px) {
-
-}
-
-/* +++++++++++ Only small Phone ++++++++++++ */
-
-@media screen and (max-width: 400px) {
-
-}
 /* +++++++++++ Tablet ++++++++++++ */
 
 @media screen and (min-width: 768px) {
@@ -258,13 +243,12 @@
     .card-description-shoplist {
         margin-bottom: 32px;
         letter-spacing: -0.56px;
-        max-width: 508px;
+        min-width: 508px;
         max-height: 53px;
     }
 
     .wrapper-card-shoplist-footer {
         max-width: 508px;
-        // max-height: 22px;
     }
 
     .card-author-shoplist {
@@ -280,10 +264,10 @@
             max-width: 48px;
             max-height: 28px;
         }
-
 }
 
 /* +++++++++++ Desktop ++++++++++++ */
+
 @media screen and (min-width: 1440px) {
 .section-shopping-list {
     margin-top: 72px;
@@ -313,11 +297,10 @@
 }
 
 .card-description-shoplist {   
-    max-width: 808px;
+    min-width: 808px;
 }
 
 .wrapper-card-shoplist-footer {
     max-width: 808px;
-    // max-height: 30px;
 }
 }
