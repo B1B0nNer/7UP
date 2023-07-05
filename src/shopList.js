@@ -1,3 +1,4 @@
+import './js/header-current-link';
 import './js/markup-shopping-list';
 import './js/onClickDelateBtn';
 import './js/firebase_sandbox';

@@ -11,3 +11,4 @@ import './js/seeMoreBtn';
 import './js/support-ukraine';
 import './js/modal-book';
 import './js/reg-window';
+import './js/header-current-link'
