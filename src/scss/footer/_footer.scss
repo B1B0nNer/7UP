@@ -1,0 +1,13 @@
+.footer_content,
+.footer_navigation,
+.social{
+    display: flex;
+    align-items: center;
+   justify-content: space-between;
+}
+.footer_team_logo{
+    margin-right: 30px;
+}
+.social_item:not(:last-child){
+    margin-right: 15px;
+}
