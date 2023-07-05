@@ -6,7 +6,7 @@
     width: 40px;
     height: 20px;
     outline: none;
-    background-color: #4f2ee8;
+    background-color: var(--blue);
     border-radius: 20px;
     transition: 0.5s;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
@@ -20,7 +20,7 @@
     width: 40px;
     height: 20px;
     outline: none;
-    background: linear-gradient(#4f2ee8, #dcdcdc);
+    background: linear-gradient(var(--blue), var(--black-400));
     border-radius: 20px;
     transition: 0.5s;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
@@ -29,7 +29,7 @@
   }
 
   & input:checked[type='checkbox'] {
-    background: linear-gradient(#4f2ee8, #686868);
+    background: linear-gradient(var(--blue), var(--black-700));
   }
 
   & input[type='checkbox']:before {
@@ -40,7 +40,7 @@
     border-radius: 20px;
     top: 2;
     left: 2;
-    background: #fff;
+    background: var(--white-100);
     transition: 0.5s;
     transform: scale(1.1);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
