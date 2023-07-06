@@ -133,34 +133,40 @@
   width: 184px;
   border-radius: 36px;
   background: var(--blue);
-  border: 2px solid var(--black-900);
   margin-left: 24px;
   transition: all $cubic;
+  z-index: 1;
 
-  &:hover,
-  &:focus {
-    background-color: var(--white-100);
-  }
-
-  &:hover .login-btn__title,
-  &:focus .login-btn__title {
-    color: var(--black-900);
-  }
 
   @media (width <= 768px) {
     display: none;
     position: fixed;
     top: 84px;
     left: 20px;
-    z-index: 1;
+
     margin: 0;
     background-color: transparent;
 
     &.is-open {
       display: block;
-      z-index: 1;
+      cursor: pointer;
     }
   }
+
+  @media (width > 768px) {
+    border: 2px solid var(--black-900);
+
+
+    &:hover,
+    &:focus {
+      background-color: var(--white-100);
+    }
+
+    &:hover .login-btn__title,
+    &:focus .login-btn__title {
+      color: var(--black-900);
+    }
+    }
 
   &__title {
     display: flex;
@@ -178,6 +184,7 @@
 }
 
 .logout-btn {
+  display: none;
   align-items: center;
   padding: 10px 14px;
   width: 184px;
@@ -186,6 +193,7 @@
   border: 2px solid var(--black-900);
   margin-left: 24px;
   transition: all $cubic;
+  z-index: 1;
 
   &:hover,
   &:focus {
@@ -198,17 +206,14 @@
   }
 
   @media (width <= 768px) {
-    display: none;
     position: fixed;
     bottom: 20px;
     left: 20px;
-    z-index: 1;
     margin: 0;
     background-color: var(--white-100);
 
     &.is-open {
       display: block;
-      z-index: 1;
     }
   }
 
@@ -216,6 +221,10 @@
     position: absolute;
     right: 32px;
     top: 60px;
+
+    &.is-open {
+      display: block;
+    }
   }
 
   &__title {
