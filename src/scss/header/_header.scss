@@ -255,6 +255,8 @@
 .books_counter{
   padding: 6px;
   border-radius: 50%;
+  justify-content: center;
+  align-items: center;
   background-color: var(--yellow);
   color: var(--black-900);
 }
