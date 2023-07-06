@@ -216,8 +216,7 @@
 
   @media (width >= 768px) {
     position: absolute;
-    margin-right: 32px;
-    right: 0;
+    right: 32px;
     top: 56px;
 
     &.is-open {
@@ -225,11 +224,6 @@
       justify-content: space-between;
     }
   }
-
-  @media (width >= 1440px) {
-    margin-right: 24px;
-  }
-
 
   &__title {
     display: flex;
