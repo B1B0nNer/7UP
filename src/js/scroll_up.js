@@ -1,5 +1,5 @@
+const scrollTopBtn = document.querySelector(".scrollup");
 function scrollTop() {
-  const scrollTopBtn = document.querySelector(".scrollup");
   if (window.scrollY >= 200)
     scrollTopBtn.classList.add("scrollup-show");
   else
