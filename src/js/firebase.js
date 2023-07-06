@@ -52,6 +52,7 @@ onAuthStateChanged(auth, (data) => {
         logout_btn.classList.add('is-hidden');
         open_autorization_btn.dataset.status = false;
         authorization__bacdrop.style.display = 'block';
+        open_autorization_btn.dataset.status = false;
 
     } else {
 
@@ -59,6 +60,7 @@ onAuthStateChanged(auth, (data) => {
         logout_btn.classList.remove('is-hidden');
         open_autorization_btn.dataset.status = true;
         authorization__bacdrop.style.display = 'none';
+        open_autorization_btn.dataset.status = true;
 
     }
 
