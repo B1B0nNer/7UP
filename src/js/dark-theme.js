@@ -2,6 +2,9 @@ function theme() {
   const checkbox = document.querySelector('.switch input[type="checkbox"]');
   const el = document.documentElement;
 
+    // Зміна стилів для плавної анімації
+  el.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+
     
     // Цей код відповідає за зміну теми при зміні стану чекбоксу.
     //  Коли користувач клікає на чекбокс і стан змінюється, спрацьовує обробник події change.
