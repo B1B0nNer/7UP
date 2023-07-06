@@ -131,6 +131,7 @@
   align-items: center;
   padding: 10px 14px;
   width: 184px;
+  border: 2px solid var(--black-900);
   border-radius: 36px;
   background: var(--blue);
   margin-left: 24px;
@@ -143,9 +144,7 @@
     position: fixed;
     top: 84px;
     left: 20px;
-
     margin: 0;
-    background-color: transparent;
 
     &.is-open {
       display: block;
@@ -154,10 +153,7 @@
   }
 
   @media (width > 768px) {
-    border: 2px solid var(--black-900);
-
-
-    &:hover,
+        &:hover,
     &:focus {
       background-color: var(--white-100);
     }
@@ -211,10 +207,7 @@
     left: 20px;
     margin: 0;
     background-color: var(--white-100);
-
-    &.is-open {
-      display: block;
-    }
+    display: block;
   }
 
   @media (width >= 768px) {
