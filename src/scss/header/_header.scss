@@ -245,3 +245,11 @@
     transition: all $cubic;
   }
 }
+
+
+.books_counter{
+  padding: 5px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  color: var(--black-900);
+}

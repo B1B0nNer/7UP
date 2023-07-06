@@ -3,6 +3,7 @@ import './js/header';
 import './js/header-current-link'
 import './js/dark-theme'; 
 import './js/markup-shopping-list';
+import './js/count-selected-books';
 import './js/onClickDelateBtn';
 import './js/loader';
 import './js/scroll_up';

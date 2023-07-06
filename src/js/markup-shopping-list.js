@@ -96,3 +96,5 @@ function markupShoppingList(arrSelectedBooks) {
   });
   shoppingList.innerHTML = arrCardsSelectedBooks.join('');   
 };
+
+export {arrSelectedBooks};
