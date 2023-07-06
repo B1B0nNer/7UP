@@ -1,12 +1,18 @@
 .header {
   position: fixed;
-  top: 0;
   background: var(--white-100);
   border-radius: 0px 0px 8px 8px;
   border-style: solid;
   border-color: var(--black-900);
   border-width: 1.5px;
   width: 100%;
+
+  @media (width >= 1440px) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 1440;
+  }
 
   &__content {
     display: flex;
@@ -74,6 +80,7 @@
   align-items: center;
   text-transform: uppercase;
   color: var(--black-900);
+  fill: var(--black-900);
   font-size: 14px;
   font-family: DM Sans;
   font-style: normal;
@@ -108,7 +115,7 @@
     padding: 8px 16px 8px 16px;
 
     @media (width <= 768px) {
-      color: var(--black-900);
+      color: var(--link-current);
       transition: all $cubic;
 
       &:hover,
@@ -121,38 +128,39 @@
 }
 
 .login-btn {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 10px 14px;
   width: 184px;
+  border: 2px solid var(--black-900);
   border-radius: 36px;
   background: var(--blue);
-  border: 2px solid var(--black-900);
   margin-left: 24px;
   transition: all $cubic;
-
-  &:hover,
-  &:focus {
-    background-color: var(--white-100);
-  }
-
-  &:hover .login-btn__title,
-  &:focus .login-btn__title {
-    color: var(--black-900);
-  }
+  z-index: 1;
 
   @media (width <= 768px) {
     display: none;
     position: fixed;
     top: 84px;
     left: 20px;
-    z-index: 1;
     margin: 0;
-    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: var(--white-100);
+    }
+
+    &:hover .login-btn__title,
+    &:focus .login-btn__title {
+      color: var(--black-900);
+    }
 
     &.is-open {
-        display: block;
-        z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
     }
   }
 
@@ -181,6 +189,7 @@
   border: 2px solid var(--black-900);
   margin-left: 24px;
   transition: all $cubic;
+  z-index: 1;
 
   &:hover,
   &:focus {
@@ -193,19 +202,34 @@
   }
 
   @media (width <= 768px) {
-    display: none;
     position: fixed;
     bottom: 20px;
     left: 20px;
-    z-index: 1;
     margin: 0;
     background-color: var(--white-100);
 
     &.is-open {
-      display: block;
-      z-index: 1;
+      display: flex;
+      justify-content: space-between;
     }
   }
+
+  @media (width >= 768px) {
+    position: absolute;
+    margin-right: 32px;
+    right: 0;
+    top: 56px;
+
+    &.is-open {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @media (width >= 1440px) {
+    margin-right: 24px;
+  }
+
 
   &__title {
     display: flex;
