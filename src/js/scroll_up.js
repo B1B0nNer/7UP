@@ -6,4 +6,9 @@ function scrollTop() {
     scrollTop.classList.remove("scrollup-show");
 }
 
-window.addEventListener("scroll", scrollTop);
+scrollTop.addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
