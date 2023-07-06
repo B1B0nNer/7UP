@@ -1,6 +1,6 @@
 const loader = document.querySelector('.loader');
 
-// loader.classList.add('hidden');
+loader.classList.add('hidden');
 
 function showLoader() {
   loader.classList.remove('hidden');
