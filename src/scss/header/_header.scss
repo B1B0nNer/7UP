@@ -1,12 +1,17 @@
 .header {
   position: fixed;
   top: 0;
+  left: 0;
   background: var(--white-100);
   border-radius: 0px 0px 8px 8px;
   border-style: solid;
   border-color: var(--black-900);
   border-width: 1.5px;
   width: 100%;
+
+  @media (width >= 1440px) {
+    width: 1392;
+  }
 
   &__content {
     display: flex;
@@ -152,8 +157,8 @@
     background-color: transparent;
 
     &.is-open {
-        display: block;
-        z-index: 1;
+      display: block;
+      z-index: 1;
     }
   }
 
@@ -173,7 +178,6 @@
 }
 
 .logout-btn {
-  display: none;
   align-items: center;
   padding: 10px 14px;
   width: 184px;
@@ -206,6 +210,12 @@
       display: block;
       z-index: 1;
     }
+  }
+
+  @media (width >= 768px) {
+    position: absolute;
+    right: 32px;
+    top: 60px;
   }
 
   &__title {
