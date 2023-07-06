@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   background: var(--white-100);
   border-radius: 0px 0px 8px 8px;
   border-style: solid;
@@ -237,4 +237,17 @@
     letter-spacing: -0.56px;
     transition: all $cubic;
   }
+}
+
+.menu__item{
+  display: flex;
+  flex-direction: row;
+  row-gap: 15px;
+}
+
+.books_counter{
+  padding: 6px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  color: var(--black-900);
 }

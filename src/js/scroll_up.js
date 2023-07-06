@@ -1,9 +1,14 @@
 function scrollTop() {
-  const scrollTop = document.querySelector(".scrollup");
+  const scrollTopBtn = document.querySelector(".scrollup");
   if (window.scrollY >= 200)
-    scrollTop.classList.add("scrollup-show");
+    scrollTopBtn.classList.add("scrollup-show");
   else
-    scrollTop.classList.remove("scrollup-show");
+    scrollTopBtn.classList.remove("scrollup-show");
 }
 
-window.addEventListener("scroll", scrollTop);
+scrollTopBtn.addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
