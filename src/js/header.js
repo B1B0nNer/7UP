@@ -28,3 +28,9 @@ function menuButtonClick() {
 function toggleClass(element, className) {
   element.classList.toggle(className);
 }
+
+login.addEventListener('click', logoutShow);
+
+function logoutShow() {
+  logout.classList.toggle('is-open');
+}
