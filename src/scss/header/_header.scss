@@ -127,7 +127,8 @@
 }
 
 .login-btn {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 10px 14px;
   width: 184px;
@@ -138,7 +139,6 @@
   transition: all $cubic;
   z-index: 1;
 
-
   @media (width <= 768px) {
     display: none;
     position: fixed;
@@ -146,14 +146,7 @@
     left: 20px;
     margin: 0;
 
-    &.is-open {
-      display: block;
-      cursor: pointer;
-    }
-  }
-
-  @media (width > 768px) {
-        &:hover,
+    &:hover,
     &:focus {
       background-color: var(--white-100);
     }
@@ -162,7 +155,13 @@
     &:focus .login-btn__title {
       color: var(--black-900);
     }
+
+    &.is-open {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
     }
+  }
 
   &__title {
     display: flex;
@@ -207,16 +206,21 @@
     left: 20px;
     margin: 0;
     background-color: var(--white-100);
-    display: block;
+
+    &.is-open {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   @media (width >= 768px) {
     position: absolute;
     right: 32px;
-    top: 60px;
+    top: 56px;
 
     &.is-open {
-      display: block;
+      display: flex;
+      justify-content: space-between;
     }
   }
 
