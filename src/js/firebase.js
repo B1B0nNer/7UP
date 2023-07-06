@@ -52,25 +52,23 @@ onAuthStateChanged(auth, (data) => {
         logout_btn.classList.add('is-hidden');
         open_autorization_btn.dataset.status = false;
         authorization__bacdrop.style.display = 'block';
-    
+
     } else {
-    
+
         login_title.innerHTML = auth.currentUser.displayName;
         logout_btn.classList.remove('is-hidden');
         open_autorization_btn.dataset.status = true;
         authorization__bacdrop.style.display = 'none';
-    
+
     }
 
 })
 
 // LOGOUT
+/** Метод для выхода пользователя из системы */
 export function firebase_logout() {
     signOut(auth)
-        .then(() => {
-            localStorage.clear();
-            console.log('Пользователь вышел из системы');
-        })
+        .then(() => localStorage.clear())
         .catch(error => console.log(error))
 }
 
@@ -99,33 +97,25 @@ export async function firebase_registration(user_email, user_password, user_nick
     }
 
     try {
-
         const data = await createUserWithEmailAndPassword(auth, user_email, user_password);
 
         await updateProfile(data.user, { displayName: user_nickname })
             .then(() => {
                 login_title.innerHTML = auth.currentUser.displayName;
-                console.log(`Пользователь под ником ${user_nickname} успешно зарегестрирован.`)
             })
-
+        
         await add_user_data_to_db();
 
     }
 
     catch (error) {
-
         if (error.code === 'auth/email-already-in-use') {
-
             console.log('Этот Email уже используется.');
-
         } else {
-
             console.log(error);
-
         }
-
     }
-
+    
 }
 
 // AUTORIZATION
@@ -159,7 +149,7 @@ export function firebase_autorization(user_email, user_password) {
             });
 
     } else {
-        console.log('Как говорил мой классный руководитель, выйди и зайди по нормальному!');
+        console.error('Пользователь уже авторизован!');
     }
 
 }
@@ -169,64 +159,53 @@ export function firebase_autorization(user_email, user_password) {
 // ======================================================================
 
 // SET BOOK TO DB
+/** Сохраняет информацию о книге в базу данных.
+    @param {string} bookID - Идентификатор книги.
+    @param {object} bookData - Данные книги для сохранения.
+*/
 export async function firebase_addItem(bookID, bookData) {
-
-    const saveData = () => {
-
+    try {
         const userCollection = collection(db, auth.currentUser.displayName);
         const docRef = doc(userCollection, bookID);
 
-        setDoc(docRef, bookData)
-            .catch((error) => {
-                console.error("Ошибка при сохранении документа:", error);
-            });
-    };
-
-    saveData();
+        await setDoc(docRef, bookData);
+    } catch (error) {
+        console.error("Ошибка при сохранении документа:", error);
+    }
 }
 
-// DELETE ITEM FROM DB
-export function firebase_deleteItem(bookID) {
-    const deleteData = () => {
-        const userCollection = collection(db, auth.currentUser.displayName);
-        const docRef = doc(userCollection, bookID);
+// DELETE BOOK FROM DB
+/** Удаляет элемент книги из базы данных.
+    @param {string} bookID - Идентификатор книги, которую нужно удалить.
+*/
+export async function firebase_deleteItem(bookID) {
 
-        deleteDoc(docRef)
-            .then(() => {
-                console.log("Документ успешно удален. ID документа:", bookID);
-            })
-            .catch((error) => {
-                console.error("Ошибка при удалении документа:", error);
-            });
-    };
+    const userCollection = collection(db, auth.currentUser.displayName);
+    const docRef = doc(userCollection, bookID);
 
-    deleteData();
+    try {
+        await deleteDoc(docRef);
+    } catch (error) {
+        console.error(error);
+    }
+
 }
 
-// GET ALL ITEMS FROM DB [DONE]
-export function firebase_getAllItems(userName) {
-    const getData = () => {
-        const userCollection = collection(db, userName);
+// GET ALL BOOKS FROM DB
+/** Получает все книги пользователя из базы данных и сохраняет их в localStorage.
+    @param {string} userName - Имя пользователя, чьи книги нужно получить.
+*/
+export async function firebase_getAllItems(userName) {
 
-        getDocs(userCollection)
-            .then((data) => {
-                data.forEach((doc) => {
-                    const item = {
-                        id: doc.id,
-                        data: doc.data()
-                    };
-                    localStorage.setItem(item.id, JSON.stringify(item.data));
-                    console.log(item.id)
-                });
-                console.log("Все элементы успешно сохранены в localStorage");
-            })
-            .catch((error) => {
-                console.error("Ошибка при получении элементов:", error);
-            });
-    };
+    const userCollection = collection(db, userName);
+    const querySnapshot = await getDocs(userCollection);
 
-    getData();
+    querySnapshot.forEach((doc) => {
+        const item = {
+            id: doc.id,
+            data: doc.data(),
+        };
+        localStorage.setItem(item.id, JSON.stringify(item.data));
+    });
+
 }
-
-
-

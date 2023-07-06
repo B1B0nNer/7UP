@@ -24,7 +24,6 @@ sign_up.addEventListener('submit', event => {
     const theme = localStorage.getItem('theme');
 
     firebase_registration(email, password, name, theme)
-        .catch(err => console.log(err))
 
 })
 
@@ -38,7 +37,6 @@ sign_in.addEventListener('submit', async (event) => {
     const password = formData.get('password');
 
     firebase_autorization(email, password)
-        .catch(err => console.log(err))
 
 })
 

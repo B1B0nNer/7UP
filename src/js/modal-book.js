@@ -175,5 +175,3 @@ function addLocal(key, value) {
 // function removElementStorage(key) {
 //   localStorage.removeItem(key);
 // }
-
-console.log(firebase_addItem)
