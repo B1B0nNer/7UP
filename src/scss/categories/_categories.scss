@@ -1,7 +1,3 @@
-// .home-container {
-//   max-width: 425px;
-// }
-
 .best-sellers.one-category {
   @include tablet {
     display: flex;
@@ -41,11 +37,7 @@
 .best-sellers-book__by-category {
   @include tablet {
     max-width: 218px;
-  }
-
-  // @include desktop {
-  //   max-width: 180px;
-  // }
+  }  
 }
 
 .selected-category-item:not(:last-child) {
