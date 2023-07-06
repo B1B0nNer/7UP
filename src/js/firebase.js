@@ -47,25 +47,19 @@ const logout_btn = document.querySelector('.logout-btn');
 onAuthStateChanged(auth, (data) => {
 
     if (data === null || data === undefined) {
-        // =======================================================
-        console.log('Пользователь не авторизован')
-        console.log(auth.currentUser)
-        // =======================================================
 
         login_title.innerHTML = `Sign up`;
         logout_btn.classList.add('is-hidden');
         open_autorization_btn.dataset.status = false;
         authorization__bacdrop.style.display = 'block';
+    
     } else {
-        // =======================================================
-        console.log('Пользователь авторизован')
-        console.log(auth.currentUser)
-        // =======================================================
-
+    
         login_title.innerHTML = auth.currentUser.displayName;
         logout_btn.classList.remove('is-hidden');
         open_autorization_btn.dataset.status = true;
         authorization__bacdrop.style.display = 'none';
+    
     }
 
 })
@@ -110,6 +104,7 @@ export async function firebase_registration(user_email, user_password, user_nick
 
         await updateProfile(data.user, { displayName: user_nickname })
             .then(() => {
+                login_title.innerHTML = auth.currentUser.displayName;
                 console.log(`Пользователь под ником ${user_nickname} успешно зарегестрирован.`)
             })
 
@@ -144,9 +139,7 @@ export function firebase_autorization(user_email, user_password) {
 
         signInWithEmailAndPassword(auth, user_email, user_password)
             .then(() => {
-                // Тут я буду забирать данные пользователя из базы
-                // в часности его корзина и состояние темы сайта
-                // МЕТОДОВ ПО РАБОТЕ С БАЗОЙ ПОКА НЕТ
+                firebase_getAllItems(auth.currentUser.displayName)
             })
             .catch((error) => {
                 switch (error.code) {
@@ -170,3 +163,70 @@ export function firebase_autorization(user_email, user_password) {
     }
 
 }
+
+// ======================================================================
+// DATABASE METHODS
+// ======================================================================
+
+// SET BOOK TO DB
+export async function firebase_addItem(bookID, bookData) {
+
+    const saveData = () => {
+
+        const userCollection = collection(db, auth.currentUser.displayName);
+        const docRef = doc(userCollection, bookID);
+
+        setDoc(docRef, bookData)
+            .catch((error) => {
+                console.error("Ошибка при сохранении документа:", error);
+            });
+    };
+
+    saveData();
+}
+
+// DELETE ITEM FROM DB
+export function firebase_deleteItem(bookID) {
+    const deleteData = () => {
+        const userCollection = collection(db, auth.currentUser.displayName);
+        const docRef = doc(userCollection, bookID);
+
+        deleteDoc(docRef)
+            .then(() => {
+                console.log("Документ успешно удален. ID документа:", bookID);
+            })
+            .catch((error) => {
+                console.error("Ошибка при удалении документа:", error);
+            });
+    };
+
+    deleteData();
+}
+
+// GET ALL ITEMS FROM DB [DONE]
+export function firebase_getAllItems(userName) {
+    const getData = () => {
+        const userCollection = collection(db, userName);
+
+        getDocs(userCollection)
+            .then((data) => {
+                data.forEach((doc) => {
+                    const item = {
+                        id: doc.id,
+                        data: doc.data()
+                    };
+                    localStorage.setItem(item.id, JSON.stringify(item.data));
+                    console.log(item.id)
+                });
+                console.log("Все элементы успешно сохранены в localStorage");
+            })
+            .catch((error) => {
+                console.error("Ошибка при получении элементов:", error);
+            });
+    };
+
+    getData();
+}
+
+
+

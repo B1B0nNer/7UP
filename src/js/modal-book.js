@@ -1,3 +1,8 @@
+import {
+  firebase_addItem,
+  firebase_deleteItem
+} from './firebase.js';
+
 import * as basicLightbox from 'basiclightbox';
 import svg from 'bundle-text:../images/x-close.svg'
 import amazon from '../images/amazon.png';
@@ -7,6 +12,7 @@ import million from '../images/books-a-million.png';
 import bookshop from '../images/book-shop.png';
 import indieBound from '../images/india-book.png';
 import noImage from '../images/no-image-new.jpg';
+
 const bodyEl = document.querySelector('body');
 const URL = 'https://books-backend.p.goit.global/books/';
 let idBook = '';
@@ -29,13 +35,13 @@ async function getInfoAboutBook(bookId) {
   const response = await fetch(`${URL}${bookId}`);
   const dataRespons = await response.json();
   const bookObj = {
-    id:dataRespons._id,
+    id: dataRespons._id,
     img: dataRespons.book_image,
     bookName: dataRespons.list_name,
     author: dataRespons.author,
     description: dataRespons.description,
     shops: dataRespons.buy_links,
-    title:dataRespons.title,
+    title: dataRespons.title,
   };
   return bookObj;
 }
@@ -54,7 +60,7 @@ async function addConten(bookId) {
       const pictur = getImeges(name);
       return `<li class="item item-book"><a href="${url}" target="_blank" class="link link-image">${pictur}</a></li>`;
     }).join('\n');
-  if (bookObj.img === ''||!bookObj.img) {
+  if (bookObj.img === '' || !bookObj.img) {
     bookObj.img = `${noImage}`;
   };
   let modalHtml = ` <div class="container-modal js-modal">
@@ -147,13 +153,15 @@ export async function openModal(event) {
   }
   btnAddEl.addEventListener('click', () => {
     addLocal(idBook, bookObj);
-     btnAddEl.classList.add('hidden');
+    firebase_addItem(idBook, bookObj);
+    btnAddEl.classList.add('hidden');
     btnRemoveEl.classList.remove('hidden')
     textElRemove.classList.remove('hidden')
   });
 
   btnRemoveEl.addEventListener('click', () => {
     localStorage.removeItem(idBook);
+    firebase_deleteItem(idBook);
     btnAddEl.classList.remove('hidden');
     btnRemoveEl.classList.add('hidden')
     textElRemove.classList.add('hidden')
@@ -167,3 +175,5 @@ function addLocal(key, value) {
 // function removElementStorage(key) {
 //   localStorage.removeItem(key);
 // }
+
+console.log(firebase_addItem)
