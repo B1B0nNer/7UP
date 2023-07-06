@@ -47,7 +47,7 @@ function checkLocalStorage() {
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
     if (key !== 'theme') {
-      let value = JSON.parse(localStorage.getItem(key))
+      let value = JSON.parse(localStorage.getItem(key));
       arrSelectedBooks.push(value);
     };
   };
