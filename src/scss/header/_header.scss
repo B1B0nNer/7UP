@@ -246,9 +246,14 @@
   }
 }
 
+.menu__item{
+  display: flex;
+  flex-direction: row;
+  row-gap: 15px;
+}
 
 .books_counter{
-  padding: 5px;
+  padding: 6px;
   border-radius: 50%;
   background-color: var(--yellow);
   color: var(--black-900);
