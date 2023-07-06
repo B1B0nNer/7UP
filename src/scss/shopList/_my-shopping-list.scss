@@ -1,9 +1,8 @@
 .section-shopping-list {
-    margin-top: 64px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: var(--black-400);
-    min-height: 100vh;
+  background-color: var(--black-400);
+  min-height: 100vh;
+  padding-top: 64px;
+  padding-bottom: 40px;
 }
 
 .main-title-shoplist-hidden {
@@ -344,7 +343,7 @@
     max-width: 760px;
 }
 
-.card-description-shoplist {   
+.card-description-shoplist {
     min-width: 808px;
 }
 
