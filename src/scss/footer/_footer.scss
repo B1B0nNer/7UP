@@ -1,6 +1,8 @@
 footer{
+    background-color: var(--white-100);
     border-top: 1.5px solid var(--black-900);
-    padding-top: 5px;
+    padding: 10px 20px;
+
 }
 .footer_content,
 .footer_navigation,
@@ -17,7 +19,7 @@ footer{
 
     @media (width >=768px) {
         display: block;
-        color: #111;
+        color:var(--black-900);
         font-size: 16px;
         font-weight: 700;
         line-height: 1.13;
